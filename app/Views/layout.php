@@ -38,6 +38,11 @@
         <div class="tm-page">
             <!-- Header -->
             <?php if ($ismobile) { ?>
+                <header class="tm-header-mobile" uk-header uk-inverse="target: .uk-navbar-container; sel-active: .uk-navbar-transparent">
+                    <div uk-sticy show-on-up animation="uk-animation-slide-top" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" cls-inactive="uk-navbar-transparent" tm-section-start>
+
+                    </div>
+                </header>
             <?php } else { ?>
                 <header class="tm-header tm-header-overlay" uk-header uk-inverse="target: .uk-navbar-container, .tm-headerbar; sel-active: .uk-navbar-transparent, .tm-headerbar">
                     <div uk-sticky show-on-up animation="uk-animation-slide-top" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" cls-inactive="uk-navbar-transparent" tm-section-start>
@@ -51,7 +56,9 @@
                                     </div>
                                     <div class="uk-navbar-right">
                                         <ul class="uk-navbar-nav">
-                                            
+                                            <li <?=(($uri->getSegment(1) === 'layanan') && ($uri->getSegment(2) === 'layanan') ? 'class="uk-active"' : '')?>><a href="layanan">Layanan</a></li>
+                                            <li <?=(($uri->getSegment(1) === 'profil') && ($uri->getSegment(2) === 'profil') ? 'class="uk-active"' : '')?>><a href="profil">Profil</a></li>
+                                            <li <?=(($uri->getSegment(1) === 'blog') && ($uri->getSegment(2) === 'blog') ? 'class="uk-active"' : '')?>><a href="blog">Blog</a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -61,9 +68,11 @@
                 </header>
             <?php } ?>
             <!-- end of Header -->
-            <?= $this->renderSection('main') ?>
-            
-            
+            <!-- Main -->
+            <main class="tm-main">
+                <?= $this->renderSection('main') ?>
+            </main>
+            <!-- end of Main -->
         </div>
     </body>
 </html>
