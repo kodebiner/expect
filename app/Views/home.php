@@ -153,4 +153,15 @@
             </div>
         </div>
     </section>
+    <section class="uk-section-muted" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-small; delay: false;">
+        <div data-src="/images/bottom-bg.svg" uk-img class="uk-background-norepeat uk-background-contain uk-background-bottom-left uk-section uk-section-xlarge" uk-parallax="bgx: -120,-120; bgy: 420,120; easing: 0.5">
+            <div class="uk-container">
+                <div class="uk-card uk-card-primary uk-width-1-1">
+                    <div class="uk-card-media-top">
+                        <img class="uk-width-1-1" src="images/team.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <?= $this->endSection() ?>
