@@ -158,7 +158,7 @@
             <div class="uk-container">
                 <div class="uk-card uk-card-primary uk-width-1-1">
                     <div class="uk-card-media-top">
-                        <img class="uk-width-1-1" src="images/team.jpg" />
+                        <img class="uk-width-1-1" src="images/team.jpg" alt="Team Expect" />
                     </div>
                 </div>
             </div>
