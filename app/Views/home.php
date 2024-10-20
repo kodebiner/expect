@@ -28,10 +28,10 @@
                 <div class="uk-width-1-1@m">
                     <h2 class="uk-h3 uk-heading-bullet uk-margin-medium uk-scrollspy-inview" uk-scrollspy-class>Program Pelatihan</h2>
                     <div class="uk-margin">
-                        <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid  uk-height-match="target: > div > a > .uk-card > .uk-card-body">
+                        <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid uk-height-match="target: > div > a > .uk-card > .uk-card-body">
                             <div>
                                 <a>
-                                    <div  class="uk-card uk-card-default uk-card-hover">
+                                    <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/pelatihan-inhouse.jpg" alt="Pelatiha Inhouse" />
                                         </div>
@@ -44,7 +44,7 @@
                             </div>
                             <div>
                                 <a>
-                                    <div  class="uk-card uk-card-default uk-card-hover">
+                                    <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/pelatihan-public.png" alt="Pelatiha Public" />
                                         </div>
@@ -57,7 +57,7 @@
                             </div>
                             <div>
                                 <a>
-                                    <div  class="uk-card uk-card-default uk-card-hover">
+                                    <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/outbound.jpg" alt="Gathering & Outbound" />
                                         </div>
@@ -69,7 +69,7 @@
                             </div>
                             <div>
                                 <a>
-                                    <div  class="uk-card uk-card-default uk-card-hover">
+                                    <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/pelatihan-pra-purnabakti.png" alt="Pelatihan Pra Purnabakti" />
                                         </div>
@@ -80,6 +80,74 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="uk-section-secondary uk-preserve-color uk-section" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-small; delay: false;">
+        <div class="uk-container uk-container-xlarge">
+            <div class="tm-grid-expand uk-grid-column-large uk-grid-margin" uk-grid>
+                <div class="uk-light uk-width-1-4@m">
+                    <h2 class="uk-position-relative uk-scrollspy-inview" style="top: 15px;" uk-scrollspy-class>Update Terbaru<br/>dari Expect</h2>
+                </div>
+                <div class="uk-width-3-4@m">
+                    <div uk-slider="autoplay: true; sets: true;">
+                        <div class="uk-position-relative">
+                            <div class="uk-slider-container">
+                                <div class="uk-slider-items uk-visible-toggle uk-child-width-1-2@m uk-grid" uk-height-match="target: > div > a > .uk-card > .uk-card-body">
+                                    <div>
+                                        <a>
+                                            <div class="uk-card uk-card-default uk-card-hover">
+                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/outbound-news.jpg');">
+                                                    <img class="uk-hidden" src="images/blog/outbound-news.jpg" alt="Lorem Ipsum" />
+                                                </div>
+                                                <div class="uk-card-body">
+                                                    <h3 class="el-card-title">Lorem Ipsum</h3>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a>
+                                            <div class="uk-card uk-card-default uk-card-hover">
+                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/online-meeting.jpg');">
+                                                    <img class="uk-hidden" src="images/blog/online-meeting.jpg" alt="Dolor Sit Amet Lorem" />
+                                                </div>
+                                                <div class="uk-card-body">
+                                                    <h3 class="el-card-title">Lorem Ipsum</h3>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a>
+                                            <div class="uk-card uk-card-default uk-card-hover">
+                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/seminar.jpg');">
+                                                    <img class="uk-hidden" src="images/blog/seminar.jpg" alt="Lorem Ipsum Dolor sit Amet" />
+                                                </div>
+                                                <div class="uk-card-body">
+                                                    <h3 class="el-card-title">Lorem Ipsum Dolor sit Amet</h3>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a>
+                                            <div class="uk-card uk-card-default uk-card-hover">
+                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/group-meeting.jpg');">
+                                                    <img class="uk-hidden" src="images/blog/group-meeting.jpg" alt="Nulla vel enim sed nunc efficitur rutrum in ut dui" />
+                                                </div>
+                                                <div class="uk-card-body">
+                                                    <h3 class="el-card-title">Nulla vel enim sed nunc efficitur rutrum in ut dui</h3>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin uk-margin-remove-bottom"></ul>
                     </div>
                 </div>
             </div>
