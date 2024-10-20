@@ -73,6 +73,21 @@
                 <?= $this->renderSection('main') ?>
             </main>
             <!-- end of Main -->
+            <!-- Footer -->
+            <footer class="uk-section uk-section-small uk-section-default">
+                <div class="uk-container uk-container-xlarge">
+                    <div class="tm-grid-expand uk-grid-row-large uk-grid-margin-large" uk-grid>
+                        <?php if (!$ismobile) { ?>
+                            <div class="uk-width-1-2">
+                                <a href="<?=base_url()?>"><img class="uk-width-1-2" src="images/logo.png" alt="Expect" /></a>
+                            </div>
+                        <?php } else { ?>
+                        <?php } ?>
+                        <div class="uk-width-1-2"></div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end of Footer -->
         </div>
     </body>
 </html>
