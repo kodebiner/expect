@@ -81,7 +81,7 @@
                                 <div class="uk-width-1-1 uk-width-1-2@m uk-text-center uk-text-left@m">
                                 <a href="<?=base_url()?>"><img class="uk-width-2-3 uk-width-1-2@m" src="images/logo.png" alt="Expect" /></a>
                                 </div>
-                            <div class="uk-width-1-1 uk-width-expand@m">
+                            <div class="uk-width-1-1 uk-width-auto@m">
                             <h3 class="uk-h5 uk-text-left@m uk-text-center">Menu</h3>
                                 <ul class="uk-list uk-text-left@m uk-text-center">
                                     <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="profil">Profil</a></li>
@@ -90,7 +90,7 @@
                                     <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="galeri">Galeri</a></li>
                                 </ul>
                             </div>
-                            <div class="uk-width-1-1 uk-width-expand@m">
+                            <div class="uk-width-1-1 uk-width-auto@m">
                                 <h3 class="uk-h5 uk-text-left@m uk-text-center">Kontak</h3>
                                 <ul class="uk-list uk-text-left@m uk-text-center">
                                     <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="tel:02742850755"><i uk-icon="receiver"></i> 0274-2850755</a></li>
