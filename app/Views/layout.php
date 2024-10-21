@@ -74,16 +74,53 @@
             </main>
             <!-- end of Main -->
             <!-- Footer -->
-            <footer class="uk-section uk-section-small uk-section-default">
-                <div class="uk-container uk-container-xlarge">
-                    <div class="tm-grid-expand uk-grid-row-large uk-grid-margin-large" uk-grid>
-                        <?php if (!$ismobile) { ?>
-                            <div class="uk-width-1-2">
-                                <a href="<?=base_url()?>"><img class="uk-width-1-2" src="images/logo.png" alt="Expect" /></a>
+            <footer>
+                <div class="uk-section-default uk-section uk-section-large uk-padding-remove-bottom">
+                    <div class="uk-container uk-container-xlarge">
+                        <div class="tm-grid-expand uk-grid-row-large uk-grid-margin-large uk-grid-divider" uk-grid>
+                                <div class="uk-width-1-1 uk-width-1-2@m uk-text-center uk-text-left@m">
+                                <a href="<?=base_url()?>"><img class="uk-width-2-3 uk-width-1-2@m" src="images/logo.png" alt="Expect" /></a>
+                                </div>
+                            <div class="uk-width-1-1 uk-width-expand@m">
+                            <h3 class="uk-h5 uk-text-left@m uk-text-center">Menu</h3>
+                                <ul class="uk-list uk-text-left@m uk-text-center">
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="profil">Profil</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="layanan">Layanan</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="blog">Blog</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="galeri">Galeri</a></li>
+                                </ul>
                             </div>
-                        <?php } else { ?>
-                        <?php } ?>
-                        <div class="uk-width-1-2"></div>
+                            <div class="uk-width-1-1 uk-width-expand@m">
+                                <h3 class="uk-h5 uk-text-left@m uk-text-center">Kontak</h3>
+                                <ul class="uk-list uk-text-left@m uk-text-center">
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="tel:02742850755"><i uk-icon="receiver"></i> 0274-2850755</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="tel:02742850773"><i uk-icon="receiver"></i> 0274-2850773</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="https://wa.me/08112500777"><i uk-icon="whatsapp"></i> 08112500777</a></a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="mailto:expectjogjatraining@gmail.com"><i uk-icon="mail"></i> expectjogjatraining@gmail.com</a></a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="https://www.instagram.com/expectjogja"><i uk-icon="instagram"></i> expectjogja</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="uk-grid tm-grid-expand uk-child-width-1-1 uk-margin-xlarge">
+                            <div class="uk-width-1-1@m">
+                                <hr/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-section-default uk-section uk-section-small">
+                    <div class="uk-container uk-container-xlarge">
+                        <div class="uk-width-1-1 uk-text-center uk-text-right@m uk-text-meta">
+                            <?php
+                            function auto_copyright($year = 'auto') {
+                                if(intval($year) == 'auto'){ $year = date('Y'); }
+                                if(intval($year) == date('Y')){ echo intval($year); }
+                                if(intval($year) < date('Y')){ echo intval($year) . ' - ' . date('Y'); }
+                                if(intval($year) > date('Y')){ echo date('Y'); }
+                            }
+                            ?>
+                            &copy copyright <?php auto_copyright("2024"); ?>. PT Eksekutif Persada Citra Jaya
+                        </div>
                     </div>
                 </div>
             </footer>
