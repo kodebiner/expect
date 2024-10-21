@@ -27,10 +27,10 @@ class Home extends BaseController
 
         // Parsing Data to View
         $data                   = $this->data;
-        $data['title']          = 'expect - Training Consultant';
+        $data['title']          = 'Profil Expect';
         $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
 
         // Rendering View
-        return view('home', $data);
+        return view('profil', $data);
     }
 }
