@@ -31,6 +31,6 @@ class Home extends BaseController
         $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
 
         // Rendering View
-        return view('profil', $data);
+        return view('profile', $data);
     }
 }
