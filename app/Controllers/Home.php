@@ -33,4 +33,19 @@ class Home extends BaseController
         // Rendering View
         return view('profile', $data);
     }
+
+    public function layanan()
+    {
+        // Calling Models
+
+        // Populating Data
+
+        // Parsing Data to View
+        $data                   = $this->data;
+        $data['title']          = 'Layanan Pelatihan Expect';
+        $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+
+        // Rendering View
+        return view('layanan', $data);
+    }
 }
