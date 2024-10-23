@@ -30,7 +30,7 @@
                     <div class="uk-margin">
                         <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid uk-height-match="target: > div > a > .uk-card > .uk-card-body">
                             <div>
-                                <a>
+                                <a href="layanan#inhouse">
                                     <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/pelatihan-inhouse.jpg" alt="Pelatiha Inhouse" />
@@ -43,7 +43,7 @@
                                 </a>
                             </div>
                             <div>
-                                <a>
+                                <a href="layanan#public">
                                     <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/pelatihan-public.png" alt="Pelatiha Public" />
@@ -56,7 +56,7 @@
                                 </a>
                             </div>
                             <div>
-                                <a>
+                                <a href="layanan#outbound">
                                     <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/outbound.jpg" alt="Gathering & Outbound" />
@@ -68,7 +68,7 @@
                                 </a>
                             </div>
                             <div>
-                                <a>
+                                <a href="layanan#purnabakti">
                                     <div class="uk-card uk-card-default uk-card-hover">
                                         <div class="uk-card-media-top">
                                             <img src="images/pelatihan-pra-purnabakti.png" alt="Pelatihan Pra Purnabakti" />
