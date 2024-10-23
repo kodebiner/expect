@@ -40,9 +40,81 @@
             <?php if ($ismobile) { ?>
                 <header class="tm-header-mobile" uk-header uk-inverse="target: .uk-navbar-container; sel-active: .uk-navbar-transparent">
                     <div uk-sticy show-on-up animation="uk-animation-slide-top" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" cls-inactive="uk-navbar-transparent" tm-section-start>
-
+                        <div class="uk-navbar-container uk-navbar-transparent uk-dark">
+                            <div class="uk-container uk-container-expand">
+                                <nav uk-navbar="{'align':'center','container':'.tm-header-mobile > [uk-sticky]','boundary':'.tm-header-mobile .uk-navbar-container','target-x':'.tm-header-mobile .uk-navbar','target-y':'.tm-header-mobile .uk-navbar-container','dropbar':true,'dropbar-anchor':'.tm-header-mobile .uk-navbar-container','dropbar-transparent-mode':'remove'}">
+                                    <div class="uk-navbar-left">
+                                        <a href="<?=base_url();?>" aria-label="Back to home" class="uk-logo uk-navbar-item">
+                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.png" />
+                                        </a>
+                                    </div>
+                                    <div class="uk-navbar-right">
+                                        <a uk-toggle href="#offcanvas" class="uk-navbar-toggle" role="button" aria-label="Open menu">
+                                            <div uk-navbar-toggle-icon></div>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </header>
+                <div id="offcanvas" class="uk-modal-full" uk-modal>
+                    <div class="uk-modal-dialog uk-flex" role="dialog">
+                        <button class="uk-modal-close-default" uk-close uk-toggle="cls: uk-modal-close-full uk-close-large uk-modal-close-default; mode: media; media: @s" aria-label="Close"></button>
+                        <div class="uk-modal-body uk-margin-auto uk-flex uk-flex-column uk-box-sizing-content uk-width-auto@s" uk-height-viewport uk-toggle="{'cls':'uk-padding-large','mode':'media','media':'@s'}">
+                            <div class="uk-child-width-1-1" uk-grid>
+                                <div>
+                                    <div class="uk-panel">
+                                        <a href="<?=base_url();?>" aria-label="Back to home" class="uk-logo">
+                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.png" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-panel">
+                                        <ul class="uk-nav uk-nav-primary uk-nav-">
+                                            <li><a href="layanan#inhouse">Peltihan Inhouse</a></li>
+                                            <li><a href="layanan#public">Peltihan Public</a></li>
+                                            <li><a href="layanan#outbound">Gathering & Outbound</a></li>
+                                            <li><a href="layanan#purnabakti">Pelatihan Pra Purnabakti</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-panel">
+                                        <div class="uk-grid tm-grid-expand uk-child-width-1-1 uk-grid-margin">
+                                            <div class="uk-width-1-1">
+                                                <hr/>
+                                                <ul class="uk-list">
+                                                    <li>
+                                                        <div class="el-content uk-panel">
+                                                            <a href="layanan" class="el-link uk-link-muted uk-margin-remove-last-child">Layanan</a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="el-content uk-panel">
+                                                            <a href="profil" class="el-link uk-link-muted uk-margin-remove-last-child">Profil</a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="el-content uk-panel">
+                                                            <a href="blog" class="el-link uk-link-muted uk-margin-remove-last-child">Blog</a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="el-content uk-panel">
+                                                            <a href="galeri" class="el-link uk-link-muted uk-margin-remove-last-child">Galeri</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <?php } else { ?>
                 <header class="tm-header tm-header-overlay" uk-header uk-inverse="target: .uk-navbar-container, .tm-headerbar; sel-active: .uk-navbar-transparent, .tm-headerbar">
                     <div uk-sticky show-on-up animation="uk-animation-slide-top" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" cls-inactive="uk-navbar-transparent" tm-section-start>
