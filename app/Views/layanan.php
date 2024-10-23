@@ -36,7 +36,7 @@
                 <p>Kami dari Expect selalu memperbarui konsep, ide agar pelatihan dan Mice tidak hanya itu-itu saja atau monoton. Selalu menghadirkan hal – hal baru yang penuh Kreatif & Inovatif dan selalu menyesuaikan dengan perkembangan tehnologi saat ini.</p>
                 <p>Pelaksanaan pelatihan sebagian besar dilaksanakan di Yogyakarta, dan juga kota-kota besar lainnya seperti Jakarta, Bandung, Bali, Surabaya, Malang, Lombok,dll. (Dan tempat pelatihan dapat menyesuaikan kebutuhan Perusahaan)</p>
                 <div class="uk-padding">
-                    <div class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid>
+                    <div id="inhouse" class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-card-media-left uk-cover-container">
                             <img src="images/pelatihan-inhouse.jpg" alt="Pelatihan Inhouse" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="uk-margin-large uk-card uk-card-secondary uk-child-width-1-2@s" uk-grid>
+                    <div id="public" class="uk-margin-large uk-card uk-card-secondary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
                             <img src="images/pelatihan-public.png" alt="Pelatihan Public" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid>
+                    <div id="outbound" class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-card-media-left uk-cover-container">
                             <img src="images/outbound.jpg" alt="Gathering & Outbound" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="uk-margin-large uk-card uk-card-secondary uk-child-width-1-2@s" uk-grid>
+                    <div id="purnabakti" class="uk-margin-large uk-card uk-card-secondary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
                             <img src="images/pelatihan-pra-purnabakti.png" alt="Pelatihan Pra Purnabakti Bisnis & Kewirausahaan" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
