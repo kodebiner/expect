@@ -18,4 +18,19 @@ class Blog extends BaseController
         // Rendering View
         return view('blog/home', $data);
     }
+
+    public function dummyarticle()
+    {
+        // Calling Models
+
+        // Populating Data
+
+        // Parsing Data to View
+        $data                   = $this->data;
+        $data['title']          = 'LoremIpsum Dolor Sit Amet';
+        $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+
+        // Rendering View
+        return view('blog/dummy', $data);
+    }
 }

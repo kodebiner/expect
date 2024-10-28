@@ -12,4 +12,5 @@ $routes->get('galeri', 'Home::galeri');
 
 $routes->group('blog', static function ($routes) {
     $routes->get('/', 'Blog::index');
+    $routes->get('dummyarticle', 'Blog::dummyarticle');
 });
