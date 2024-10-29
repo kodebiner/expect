@@ -40,7 +40,10 @@ class Autoload extends AutoloadConfig
      * @var array<string, list<string>|string>
      */
     public $psr4 = [
-        APP_NAMESPACE => APPPATH,
+        APP_NAMESPACE                   => APPPATH,
+        'Config'                        => APPPATH . 'Config',
+        'CodeIgniter\\Settings'         => APPPATH . 'ThirdParty/settings-2.2.0',
+        'CodeIgniter\\Shield'           => APPPATH . 'ThirdParty/shield-1.1.0',
     ];
 
     /**
@@ -90,5 +93,5 @@ class Autoload extends AutoloadConfig
      *
      * @var list<string>
      */
-    public $helpers = [];
+    public $helpers = ['auth', 'setting'];
 }
