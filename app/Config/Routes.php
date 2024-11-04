@@ -14,3 +14,5 @@ $routes->group('blog', static function ($routes) {
     $routes->get('/', 'Blog::index');
     $routes->get('dummyarticle', 'Blog::dummyarticle');
 });
+
+service('auth')->routes($routes);
