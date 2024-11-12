@@ -9,15 +9,15 @@
         <div class="uk-container uk-container-xlarge">
             <div class="uk-grid tm-grid-expand uk-child-width-1-1 uk-grid-margin">
                 <div class="uk-panel uk-width-1-1">
-                    <div class="uk-position-absolute uk-width-1-1 uk-text-left" id="page#0" uk-parallax="y: 0,-9vh; easing: 0.5" style="right: 30vw; top: -16vh; z-index: 0; transform: translateY(0vh); will-change: transform;">
+                    <!-- <div class="uk-position-absolute uk-width-1-1 uk-text-left" id="page#0" uk-parallax="y: 0,-9vh; easing: 0.5" style="right: 30vw; top: -16vh; z-index: 0; transform: translateY(0vh); will-change: transform;">
                         <img src="images/home-hero-left.svg" width="800" height="750" class="el-image" loading="eager" />
-                    </div>
+                    </div> -->
                     <div class="uk-text-center">
-                        <img class="uk-width-1-1 uk-width-1-2@m" src="images/logo.png"/>
+                        <img class="uk-width-1-1 uk-width-1-2@m" src="images/logo.svg" uk-svg/>
                     </div>
-                    <div class="uk-position-absolute uk-width-1-1 uk-text-right" id="page#1" uk-parallax="y: 4vh,-10vh; easing: 0.5" style="right: -20vw; bottom: -24vh; z-index: 0; transform: translateY(4vh); will-change: transform;">
+                    <!-- <div class="uk-position-absolute uk-width-1-1 uk-text-right" id="page#1" uk-parallax="y: 4vh,-10vh; easing: 0.5" style="right: -20vw; bottom: -24vh; z-index: 0; transform: translateY(4vh); will-change: transform;">
                         <img src="images/home-hero-right.svg" width="650" height="600" class="el-image" loading="eager" />
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
