@@ -131,6 +131,7 @@
                                             <li <?=(($uri->getSegment(1) === 'layanan') && ($uri->getSegment(2) === 'layanan') ? 'class="uk-active"' : '')?>><a href="layanan">Layanan</a></li>
                                             <li <?=(($uri->getSegment(1) === 'profil') && ($uri->getSegment(2) === 'profil') ? 'class="uk-active"' : '')?>><a href="profil">Profil</a></li>
                                             <li <?=(($uri->getSegment(1) === 'blog') && ($uri->getSegment(2) === 'blog') ? 'class="uk-active"' : '')?>><a href="blog">Blog</a></li>
+                                            <li <?=(($uri->getSegment(1) === 'blog') && ($uri->getSegment(2) === 'galeri') ? 'class="uk-active"' : '')?>><a href="galeri">Galeri</a></li>
                                         </ul>
                                     </div>
                                 </nav>
