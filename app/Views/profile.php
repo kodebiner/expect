@@ -43,7 +43,21 @@
                     </div>
                 </div>
             </div>
-            <h2 class="uk-heading-bullet uk-margin uk-scrollspy-inview" uk-scrollspy-class>Team Expect</h2>
+            <div class="uk-margin uk-card uk-card-primary uk-grid-collapse uk-child-width-1-2@m uk-grid-match" uk-grid uk-scrollspy-class>
+                <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                    <img src="images/team/silvia.png" alt="Silvia" uk-cover />
+                    <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
+                </div>
+                <div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-h2 uk-text-uppercase uk-margin-remove-bottom">Silvia</h3>
+                        <h4 class="uk-h4 uk-margin-remove-top">Direktur</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat pharetra elit consequat egestas. Nulla facilisi. Vivamus suscipit, libero sit amet sollicitudin auctor, tortor turpis semper arcu, ut pulvinar turpis magna eget lectus. Ut tincidunt malesuada nisl, ultrices viverra felis blandit vitae.</p>
+                        <p>Aliquam blandit leo sollicitudin malesuada rhoncus. Phasellus molestie pretium erat ut pharetra. In tincidunt elit purus, eu sagittis risus luctus sit amet. Phasellus mattis tellus magna, eu bibendum ante congue at. Sed euismod tempor orci, nec vulputate lorem euismod in.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <h2 class="uk-heading-bullet uk-margin uk-scrollspy-inview" uk-scrollspy-class>Team Expect</h2>
             <div class="uk-flex-center" uk-grid>
                 <div class="uk-width-1-2 uk-width-1-4@m">
                     <div class="uk-card uk-card-default uk-card-hover">
@@ -145,6 +159,24 @@
                             <div class="uk-text-meta">Crew</div>
                         </div>
                     </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <section class="uk-section uk-section-default">
+        <div class="uk-container uk-margin-large">
+            <h2 class="uk-heading-bullet uk-margin uk-scrollspy-inview" uk-scrollspy-class>Client Expect</h2>
+        </div>
+        <div class="uk-container uk-container-expand uk-margin-large">
+            <div class="uk-position-relative uk-visible-toggle uk-light uk-margin" tabindex="-1" uk-slider="autoplay: true; autoplay-interval: 2000; center: true;">
+                <div class="uk-slider-items uk-child-width-auto" uk-grid>
+                    <?php
+                    foreach ($clients as $client) {
+                        echo '<div class="uk-height-small uk-flex uk-flex-middle uk-flex-center">';
+                        echo '<img src="images/clients/'.$client['image'].'" style="max-height:100%;" />';
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>

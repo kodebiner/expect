@@ -45,7 +45,7 @@
                                 <nav uk-navbar="{'align':'center','container':'.tm-header-mobile > [uk-sticky]','boundary':'.tm-header-mobile .uk-navbar-container','target-x':'.tm-header-mobile .uk-navbar','target-y':'.tm-header-mobile .uk-navbar-container','dropbar':true,'dropbar-anchor':'.tm-header-mobile .uk-navbar-container','dropbar-transparent-mode':'remove'}">
                                     <div class="uk-navbar-left">
                                         <a href="<?=base_url();?>" aria-label="Back to home" class="uk-logo uk-navbar-item">
-                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.png" />
+                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.svg" uk-svg />
                                         </a>
                                     </div>
                                     <div class="uk-navbar-right">
@@ -66,7 +66,7 @@
                                 <div>
                                     <div class="uk-panel">
                                         <a href="<?=base_url();?>" aria-label="Back to home" class="uk-logo">
-                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.png" />
+                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.svg" uk-svg />
                                         </a>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                                 <nav uk-navbar="{'align':'center','container':'.tm-header > [uk-sticky]','boundary':'.tm-header .uk-navbar-container','target-x':'.tm-header .uk-navbar','target-y':'.tm-header .uk-navbar-container','dropbar':true,'dropbar-anchor':'.tm-header .uk-navbar-container','dropbar-transparent-mode':'remove'}">
                                     <div class="uk-navbar-left">
                                         <a href="<?=base_url()?>" class="uk-logo uk-navbar-item">
-                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.png" />
+                                            <img alt="expect - Training Consultant" loading="eager" width="115" height="50" src="images/logo.svg" uk-svg />
                                         </a>
                                     </div>
                                     <div class="uk-navbar-right">
@@ -151,7 +151,7 @@
                     <div class="uk-container uk-container-xlarge">
                         <div class="tm-grid-expand uk-grid-row-large uk-grid-margin-large uk-grid-divider" uk-grid>
                                 <div class="uk-width-1-1 uk-width-1-2@m uk-text-center uk-text-left@m">
-                                <a href="<?=base_url()?>"><img class="uk-width-2-3 uk-width-1-2@m" src="images/logo.png" alt="Expect" /></a>
+                                <a href="<?=base_url()?>"><img class="uk-width-2-3 uk-width-1-2@m" src="images/logo.svg" alt="Expect" uk-svg /></a>
                                 </div>
                             <div class="uk-width-1-1 uk-width-auto@m">
                             <h3 class="uk-h5 uk-text-left@m uk-text-center">Menu</h3>
@@ -165,11 +165,11 @@
                             <div class="uk-width-1-1 uk-width-auto@m">
                                 <h3 class="uk-h5 uk-text-left@m uk-text-center">Kontak</h3>
                                 <ul class="uk-list uk-text-left@m uk-text-center">
-                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="tel:02742850755"><i uk-icon="receiver"></i> 0274-2850755</a></li>
-                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="tel:02742850773"><i uk-icon="receiver"></i> 0274-2850773</a></li>
-                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="https://wa.me/08112500777"><i uk-icon="whatsapp"></i> 08112500777</a></a></li>
-                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="mailto:expectjogjatraining@gmail.com"><i uk-icon="mail"></i> expectjogjatraining@gmail.com</a></a></li>
-                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="https://www.instagram.com/expectjogja"><i uk-icon="instagram"></i> expectjogja</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="tel:02742850755" target="_blank"><i uk-icon="receiver"></i> 0274-2850755</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="tel:02742850773" target="_blank"><i uk-icon="receiver"></i> 0274-2850773</a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="https://wa.me/08112500777" target="_blank"><i uk-icon="whatsapp"></i> 08112500777</a></a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="mailto:expectjogjatraining@gmail.com" target="_blank"><i uk-icon="mail"></i> expectjogjatraining@gmail.com</a></a></li>
+                                    <li><a class="el-link uk-link-muted uk-margin-remove-last-child" href="https://www.instagram.com/expectjogja" target="_blank"><i uk-icon="instagram"></i> expectjogja</a></li>
                                 </ul>
                             </div>
                         </div>
