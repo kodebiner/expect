@@ -86,6 +86,18 @@
                             </div>
                         </div>
                     </div>
+                    <div id="bnsp" class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid uk-scroll>
+                        <div class="uk-card-media-left uk-cover-container">
+                            <img src="images/pelatihan-pra-purnabakti.png" alt="Sertifikasi BNSP" uk-cover>
+                            <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
+                        </div>
+                        <div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">Serifikasi BNSP</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat pharetra elit consequat egestas. Nulla facilisi. Vivamus suscipit, libero sit amet sollicitudin auctor, tortor turpis semper arcu, ut pulvinar turpis magna eget lectus. Ut tincidunt malesuada nisl, ultrices viverra felis blandit vitae.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
