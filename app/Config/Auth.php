@@ -79,8 +79,8 @@ class Auth extends ShieldAuth
         'login'             => 'office',
         'logout'            => 'login',
         'force_reset'       => 'login',
-        'permission_denied' => 'office',
-        'group_denied'      => 'office',
+        'permission_denied' => '/',
+        'group_denied'      => '/',
     ];
 
     /**

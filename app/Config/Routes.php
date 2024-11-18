@@ -9,7 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 service('auth')->routes($routes);
 
 // Backoffice
-$routes->group('office', ['filter' => 'chain'], static function ($routes) {
+$routes->group('office', ['filter' => ['chain','group:superadmin,admin']], static function ($routes) {
     service('auth')->routes($routes);
     $routes->get('/', 'Office::index');
 });
