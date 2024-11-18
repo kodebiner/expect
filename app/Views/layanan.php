@@ -102,4 +102,25 @@
             </div>
         </div>
     </section>
+    <section class="uk-section uk-section-secondary">
+        <div class="uk-container">
+            <h2 class="uk-heading-bullet uk-margin-large-bottom" uk-scrollspy-class>Agenda Expect</h2>
+            <div class="uk-margin" uk-accordion>
+                <?php foreach ($agendas as $agenda) { ?>
+                    <li>
+                        <a class="uk-accordion-title" href><?=$agenda['name'];?></a>
+                        <div class="uk-accordion-content">
+                            <table class="uk-table uk-table-divider uk-table-hover">
+                                <tbody>
+                                    <?php foreach ($agenda['list'] as $list) { ?>
+                                        <tr><td><?=$list;?></td></tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                <?php } ?>
+            </div>
+        </div>
+    </section>
 <?= $this->endSection() ?>
