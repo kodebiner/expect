@@ -55,12 +55,16 @@
                                 <img src="images/logo-white.svg" loading="eager" width="115" height="50" uk-svg />
                             </a>
                         </div>
+                    <?php } else { ?>
+                        <div class="uk-navbar-right">
+                            <a href="logout" class="uk-button uk-button-default">Logout</a>
+                        </div>
                     <?php } ?>
                 </nav>
             </div>
         </header>
         <main>
-            <div uk-grid>
+            <div class="uk-grid-collapse" uk-grid>
                 <?php if (!$ismobile) { ?>
                     <div class="uk-width-1-5">
                         <div class="uk-panel-scrollable" uk-height-viewport="offset-top:true; offset-bottom:#footer;" style="resize:none;">
@@ -84,16 +88,20 @@
                                 <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'gallery') ? 'class="uk-active"' : '')?>>
                                     <a><span class="uk-margin-small-right" uk-icon="image"></span> Gallery</a>
                                 </li>
-                                <li class="uk-nav-divider"></li>
-                                <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'users') ? 'class="uk-active"' : '')?>>
-                                    <a><span class="uk-margin-small-right" uk-icon="users"></span> Users</a>
-                                </li>
+                                <?php if ($user->inGroup('superadmin')) { ?>
+                                    <li class="uk-nav-divider"></li>
+                                    <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'users') ? 'class="uk-active"' : '')?>>
+                                        <a><span class="uk-margin-small-right" uk-icon="users"></span> Users</a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
                 <?php } ?>
-                <div class="uk-width-1-1 uk-width-3-4@m">
-                    <?= $this->renderSection('main') ?>
+                <div class="uk-width-1-1 uk-width-4-5@m">
+                    <div class="uk-panel-scrollable" uk-height-viewport="offset-top:true; offset-bottom:#footer;" style="resize:none;">
+                        <?= $this->renderSection('main') ?>
+                    </div>
                 </div>
             </div>
         </main>
@@ -111,9 +119,45 @@
                         ?>
                         &copy copyright <?php auto_copyright("2024"); ?>. PT Eksekutif Persada Citra Jaya
                     </div>
-                    <div class="uk-text-meta Uk-text-center uk-text-right@m">Developed by PT Kodebiner Teknologi Indonesia</div>
+                    <div class="uk-text-meta Uk-text-center uk-text-right@m">Developed by <a href="https://binary111.com" target="_blank">PT Kodebiner Teknologi Indonesia</a></div>
                 </div>
             </div>
         </footer>
+        <?php if ($ismobile) { ?>
+            <div id="offcanvas" uk-offcanvas="mode: push; overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <ul class="uk-nav uk-nav-primary">
+                        <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === '') ? 'class="uk-active"' : '')?>>
+                            <a><span class="uk-margin-small-right" uk-icon="home"></span> Dashboard</a>
+                        </li>
+                        <li class="uk-nav-divider"></li>
+                        <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'blog') ? 'class="uk-active"' : '')?>>
+                            <a><span class="uk-margin-small-right" uk-icon="rss"></span> Blog</a>
+                        </li>
+                        <li class="uk-nav-divider"></li>
+                        <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'agenda') ? 'class="uk-active"' : '')?>>
+                            <a><span class="uk-margin-small-right" uk-icon="calendar"></span> Agenda</a>
+                        </li>
+                        <li class="uk-nav-divider"></li>
+                        <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'client') ? 'class="uk-active"' : '')?>>
+                            <a><span class="uk-margin-small-right" uk-icon="bookmark"></span> Client</a>
+                        </li>
+                        <li class="uk-nav-divider"></li>
+                        <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'gallery') ? 'class="uk-active"' : '')?>>
+                            <a><span class="uk-margin-small-right" uk-icon="image"></span> Gallery</a>
+                        </li>
+                        <?php if ($user->inGroup('superadmin')) { ?>
+                            <li class="uk-nav-divider"></li>
+                            <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'users') ? 'class="uk-active"' : '')?>>
+                                <a><span class="uk-margin-small-right" uk-icon="users"></span> Users</a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                    <div class="uk-margin-large uk-text-center">
+                        <a href="logout" class="uk-button uk-button-default">Logout</a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
     </body>
 </html>
