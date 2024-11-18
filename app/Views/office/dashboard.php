@@ -1,4 +1,4 @@
-<?= $this->extend('layout') ?>
+<?= $this->extend('office/layout') ?>
 
 <?= $this->section('main') ?>
 <?= $this->endSection() ?>

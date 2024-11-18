@@ -6,9 +6,12 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+service('auth')->routes($routes);
+
 // Backoffice
-$routes->group('office', static function ($routes) {
+$routes->group('office', ['filter' => 'chain'], static function ($routes) {
     service('auth')->routes($routes);
+    $routes->get('/', 'Office::index');
 });
 
 $routes->get('/', 'Home::index');
