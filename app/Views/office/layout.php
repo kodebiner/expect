@@ -70,28 +70,28 @@
                         <div class="uk-panel-scrollable" uk-height-viewport="offset-top:true; offset-bottom:#footer;" style="resize:none;">
                             <ul class="uk-nav uk-nav-primary">
                                 <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === '') ? 'class="uk-active"' : '')?>>
-                                    <a><span class="uk-margin-small-right" uk-icon="home"></span> Dashboard</a>
+                                    <a href="office"><span class="uk-margin-small-right" uk-icon="home"></span> Dashboard</a>
                                 </li>
                                 <li class="uk-nav-divider"></li>
                                 <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'blog') ? 'class="uk-active"' : '')?>>
-                                    <a><span class="uk-margin-small-right" uk-icon="rss"></span> Blog</a>
+                                    <a href="office/blog"><span class="uk-margin-small-right" uk-icon="rss"></span> Blog</a>
                                 </li>
                                 <li class="uk-nav-divider"></li>
                                 <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'agenda') ? 'class="uk-active"' : '')?>>
-                                    <a><span class="uk-margin-small-right" uk-icon="calendar"></span> Agenda</a>
+                                    <a href="office/agenda"><span class="uk-margin-small-right" uk-icon="calendar"></span> Agenda</a>
                                 </li>
                                 <li class="uk-nav-divider"></li>
                                 <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'client') ? 'class="uk-active"' : '')?>>
-                                    <a><span class="uk-margin-small-right" uk-icon="bookmark"></span> Client</a>
+                                    <a href="office/client"><span class="uk-margin-small-right" uk-icon="bookmark"></span> Client</a>
                                 </li>
                                 <li class="uk-nav-divider"></li>
                                 <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'gallery') ? 'class="uk-active"' : '')?>>
-                                    <a><span class="uk-margin-small-right" uk-icon="image"></span> Gallery</a>
+                                    <a href="office/gallery"><span class="uk-margin-small-right" uk-icon="image"></span> Gallery</a>
                                 </li>
                                 <?php if ($user->inGroup('superadmin')) { ?>
                                     <li class="uk-nav-divider"></li>
                                     <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'users') ? 'class="uk-active"' : '')?>>
-                                        <a><span class="uk-margin-small-right" uk-icon="users"></span> Users</a>
+                                        <a href="office/users"><span class="uk-margin-small-right" uk-icon="users"></span> Users</a>
                                     </li>
                                 <?php } ?>
                             </ul>
@@ -128,28 +128,28 @@
                 <div class="uk-offcanvas-bar">
                     <ul class="uk-nav uk-nav-primary">
                         <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === '') ? 'class="uk-active"' : '')?>>
-                            <a><span class="uk-margin-small-right" uk-icon="home"></span> Dashboard</a>
+                            <a href="office"><span class="uk-margin-small-right" uk-icon="home"></span> Dashboard</a>
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'blog') ? 'class="uk-active"' : '')?>>
-                            <a><span class="uk-margin-small-right" uk-icon="rss"></span> Blog</a>
+                            <a href="office/blog"><span class="uk-margin-small-right" uk-icon="rss"></span> Blog</a>
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'agenda') ? 'class="uk-active"' : '')?>>
-                            <a><span class="uk-margin-small-right" uk-icon="calendar"></span> Agenda</a>
+                            <a href="office/agenda"><span class="uk-margin-small-right" uk-icon="calendar"></span> Agenda</a>
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'client') ? 'class="uk-active"' : '')?>>
-                            <a><span class="uk-margin-small-right" uk-icon="bookmark"></span> Client</a>
+                            <a href="office/client"><span class="uk-margin-small-right" uk-icon="bookmark"></span> Client</a>
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'gallery') ? 'class="uk-active"' : '')?>>
-                            <a><span class="uk-margin-small-right" uk-icon="image"></span> Gallery</a>
+                            <a href="office/gallery"><span class="uk-margin-small-right" uk-icon="image"></span> Gallery</a>
                         </li>
                         <?php if ($user->inGroup('superadmin')) { ?>
                             <li class="uk-nav-divider"></li>
                             <li <?=(($uri->getSegment(1) === 'office') && ($uri->getSegment(2) === 'users') ? 'class="uk-active"' : '')?>>
-                                <a><span class="uk-margin-small-right" uk-icon="users"></span> Users</a>
+                                <a href="office/users"><span class="uk-margin-small-right" uk-icon="users"></span> Users</a>
                             </li>
                         <?php } ?>
                     </ul>
