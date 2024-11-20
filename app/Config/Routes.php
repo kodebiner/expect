@@ -12,6 +12,9 @@ service('auth')->routes($routes);
 $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], static function ($routes) {
     service('auth')->routes($routes);
     $routes->get('/', 'Office::index');
+    $routes->group('client', static function ($routes) {
+        $routes->get('/', 'Client::index');
+    });
 });
 
 $routes->get('/', 'Home::index');
