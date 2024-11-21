@@ -3,8 +3,17 @@
 <?= $this->section('main') ?>
 <section class="uk-section uk-section-small">
     <div class="uk-container uk-container-expand">
-        <h1 class="uk-h3 uk-heading-bullet uk-margin-large-bottom"><?=$title;?></h1>
-        <div class="uk-child-width-1-2 uk-child-width-1-4@m" uk-grid  uk-height-match="target: > div > .uk-card > .uk-card-header">
+        <!-- Title -->
+        <div class="uk-child-width-auto uk-flex-between" uk-grid>
+            <div>
+                <h1 class="uk-h3 uk-heading-bullet uk-margin-remove"><?=$title;?></h1>
+            </div>
+            <div>
+                <a class="uk-button uk-button-secondary" href="">Tambah Client</a>
+            </div>
+        </div>
+        <!-- Client Grid -->
+        <div class="uk-child-width-1-1 uk-child-width-1-4@m" uk-grid  uk-height-match="target: > div > .uk-card > .uk-card-header">
             <?php foreach ($clients as $client) { ?>
                 <div>
                     <div class="uk-card uk-card-default uk-card-hover">
@@ -35,13 +44,71 @@
                                     <div class="uk-margin">
                                         <label class="uk-form-label" for="name">Nama Client</label>
                                         <div class="uk-from-controls">
-                                            <input class="uk-input" id="name" name="name" type="text" placeholder="Nama Client" value="<?=$client['name']?>" />
+                                            <input class="uk-input" id="name-<?=$client['id']?>" name="name" type="text" placeholder="Nama Client" value="<?=$client['name']?>" />
                                         </div>
                                     </div>
                                     <div class="uk-margin">
                                         <label class="uk-form-label" for="logo">Logo Client</label>
                                         <div class="uk-from-controls">
-                                            
+                                            <div class="edit-upload-<?=$client['id']?> uk-placeholder uk-text-center">
+                                                <span uk-icon="icon: move"></span>
+                                                <span class="uk-text-middle">Tarik dan lepas file di sini atau</span>
+                                                <div uk-form-custom>
+                                                    <input type="file" multiple>
+                                                    <span class="uk-link">pilih satu</span>
+                                                </div>
+                                            </div>
+                                            <progress id="edit-progressbar-<?=$client['id']?>" class="uk-progress" value="0" max="100" hidden></progress>
+                                            <input id="old-logo-<?=$client['id']?>" name="old-logo" value="<?=$client['image']?>" hidden />
+                                            <input id="new-logo-<?=$client['id']?>" name="new-logo" value="<?=$client['image']?>" hidden />
+                                            <div id="logo-container-<?=$client['id']?>" class="uk-height-small uk-flex uk-flex-middle uk-flex-center">
+                                                <img src="images/clients/<?=$client['image']?>" style="max-height:100%; max-width:100%;" />
+                                            </div>
+                                            <script>
+                                                var bar = document.getElementById('js-progressbar');
+                                                UIkit.upload('.edit-upload-<?=$client['id']?>', {
+                                                    url: 'office/client/editupload/<?=$client['id']?>',
+                                                    multiple: false,
+                                                    beforeSend: function () {
+                                                        console.log('beforeSend', arguments);
+                                                    },
+                                                    beforeAll: function () {
+                                                        console.log('beforeAll', arguments);
+                                                    },
+                                                    load: function () {
+                                                        console.log('load', arguments);
+                                                    },
+                                                    error: function () {
+                                                        console.log('error', arguments);
+                                                    },
+                                                    complete: function () {
+                                                        console.log('complete', arguments);
+                                                    },
+                                                    loadStart: function (e) {
+                                                        console.log('loadStart', arguments);
+                                                        bar.removeAttribute('hidden');
+                                                        bar.max = e.total;
+                                                        bar.value = e.loaded;
+                                                    },
+                                                    progress: function (e) {
+                                                        console.log('progress', arguments);
+                                                        bar.max = e.total;
+                                                        bar.value = e.loaded;
+                                                    },
+                                                    loadEnd: function (e) {
+                                                        console.log('loadEnd', arguments);
+                                                        bar.max = e.total;
+                                                        bar.value = e.loaded;
+                                                    },
+                                                    completeAll: function () {
+                                                        console.log('completeAll', arguments);
+                                                        setTimeout(function () {
+                                                            bar.setAttribute('hidden', 'hidden');
+                                                        }, 1000);
+                                                        alert('Upload Completed');
+                                                    }
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                 </form>
