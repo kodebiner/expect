@@ -42,21 +42,23 @@
                                 <div class="uk-modal-body">
                                     <?= csrf_field() ?>
                                     <div class="uk-margin">
-                                        <label class="uk-form-label" for="name">Nama Client</label>
+                                        <label class="uk-form-label" for="name-<?=$client['id']?>">Nama Client</label>
                                         <div class="uk-from-controls">
                                             <input class="uk-input" id="name-<?=$client['id']?>" name="name" type="text" placeholder="Nama Client" value="<?=$client['name']?>" />
                                         </div>
                                     </div>
                                     <div class="uk-margin">
-                                        <label class="uk-form-label" for="logo">Logo Client</label>
+                                        <label class="uk-form-label" for="new-logo-<?=$client['id']?>">Logo Client</label>
                                         <div class="uk-from-controls">
                                             <div class="edit-upload-<?=$client['id']?> uk-placeholder uk-text-center">
-                                                <span uk-icon="icon: move"></span>
+                                                <span uk-icon="icon:move; ratio:2;"></span><br/>
                                                 <span class="uk-text-middle">Tarik dan lepas file di sini atau</span>
                                                 <div uk-form-custom>
                                                     <input type="file" multiple>
                                                     <span class="uk-link">pilih satu</span>
                                                 </div>
+                                                <br/>
+                                                <span>Maks 500kb</span>
                                             </div>
                                             <progress id="edit-progressbar-<?=$client['id']?>" class="uk-progress" value="0" max="100" hidden></progress>
                                             <input id="old-logo-<?=$client['id']?>" name="old-logo" value="<?=$client['image']?>" hidden />
@@ -65,13 +67,13 @@
                                                 <img src="images/clients/<?=$client['image']?>" style="max-height:100%; max-width:100%;" />
                                             </div>
                                             <script>
-                                                var bar = document.getElementById('js-progressbar');
+                                                var bar = document.getElementById('edit-progressbar-<?=$client['id']?>');
                                                 UIkit.upload('.edit-upload-<?=$client['id']?>', {
                                                     url: 'office/client/editupload/<?=$client['id']?>',
                                                     multiple: false,
+                                                    name: 'upload',
                                                     method: 'POST',
-                                                    mime: 'image/*',
-                                                    'msg-invalid-mime': 'Jenis File Tidak Valid: %s',
+                                                    type: 'json',
                                                     beforeSend: function () {
                                                         console.log('beforeSend', arguments);
                                                     },
@@ -83,9 +85,22 @@
                                                     },
                                                     error: function () {
                                                         console.log('error', arguments);
+                                                        var error = arguments[0].xhr.response.message.upload;
+                                                        alert(error);
                                                     },
                                                     complete: function () {
                                                         console.log('complete', arguments);
+                                                        var filename = arguments[0].response;
+                                                        var imagecontainer = document.getElementById("logo-container-<?=$client['id']?>");
+
+                                                        imagecontainer.innerHTML = '';
+                                                        document.getElementById("new-logo-<?=$client['id']?>").value = filename;
+
+                                                        var image = document.createElement('img');
+                                                        image.setAttribute('src', 'images/clients/'+filename);
+                                                        image.setAttribute('style', 'max-height:100%; max-width:100%;');
+
+                                                        imagecontainer.appendChild(image);
                                                     },
                                                     loadStart: function (e) {
                                                         console.log('loadStart', arguments);
@@ -108,7 +123,7 @@
                                                         setTimeout(function () {
                                                             bar.setAttribute('hidden', 'hidden');
                                                         }, 1000);
-                                                        alert('Upload Completed');
+                                                        alert('Upload Selesai');
                                                     }
                                                 });
                                             </script>

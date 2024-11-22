@@ -14,6 +14,7 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
     $routes->get('/', 'Office::index');
     $routes->group('client', static function ($routes) {
         $routes->get('/', 'Client::index');
+        $routes->post('editupload/(:num)', 'Client::editupload/$1');
     });
 });
 

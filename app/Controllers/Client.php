@@ -26,6 +26,27 @@ class Client extends BaseController
         return view('office/client', $data);
     }
 
-    public function editupload()
-    {}
+    public function editupload($id)
+    {
+        $input      = $this->request->getFile('upload');
+
+        // Validation Rules
+        $rules = [
+            'upload'   => 'uploaded[upload]|is_image[upload]|max_size[upload,500]',
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            http_response_code(400);
+            die(json_encode(array('message' => $this->validator->getErrors())));
+        }
+
+        if ($input->isValid() && !$input->hasMoved()) {
+            $filename = $input->getRandomName();
+            $input->move(FCPATH . '/images/clients/', $filename);
+
+            // Returning Message
+            die(json_encode($filename));
+        }
+    }
 }
