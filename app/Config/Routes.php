@@ -16,6 +16,16 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
         $routes->get('/', 'Client::index');
         $routes->post('editupload/(:num)', 'Client::editupload/$1');
     });
+    $routes->group('agenda', static function ($routes) {
+        $routes->get('/', 'Agenda::indexcat');
+        $routes->get('edit-agenda-(:num)', 'Agenda::indexeditcat/$1');
+        $routes->post('add-category', 'Agenda::createcat');
+        $routes->post('edit-category-(:num)', 'Agenda::editcat/$1');
+        $routes->get('delete-category-(:num)', 'Agenda::deletecat/$1');
+        $routes->post('add-agenda', 'Agenda::createagenda');
+        $routes->post('edit-agenda-(:num)', 'Agenda::editagenda/$1');
+        $routes->get('delete-agenda-(:num)', 'Agenda::deleteagenda/$1');
+    });
 });
 
 $routes->get('/', 'Home::index');
