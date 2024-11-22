@@ -69,6 +69,9 @@
                                                 UIkit.upload('.edit-upload-<?=$client['id']?>', {
                                                     url: 'office/client/editupload/<?=$client['id']?>',
                                                     multiple: false,
+                                                    method: 'POST',
+                                                    mime: 'image/*',
+                                                    'msg-invalid-mime': 'Jenis File Tidak Valid: %s',
                                                     beforeSend: function () {
                                                         console.log('beforeSend', arguments);
                                                     },

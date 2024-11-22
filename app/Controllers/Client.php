@@ -25,4 +25,7 @@ class Client extends BaseController
         // Rendering View
         return view('office/client', $data);
     }
+
+    public function editupload()
+    {}
 }
