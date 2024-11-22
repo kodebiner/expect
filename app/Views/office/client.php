@@ -36,10 +36,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id="edit-<?=$client['id']?>" class="uk-flex-top" uk-modal>
+                    <div id="edit-<?=$client['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
                         <div class="uk-modal-dialog uk-margin-auto-vertical">
-                            <div class="uk-modal-body">
-                                <form class="uk-margin uk-form-stacked" action="office/client/edit-<?=$client['id']?>" method="post">
+                            <form class="uk-margin uk-form-stacked" action="office/client/edit-<?=$client['id']?>" method="post">
+                                <div class="uk-modal-body">
                                     <?= csrf_field() ?>
                                     <div class="uk-margin">
                                         <label class="uk-form-label" for="name">Nama Client</label>
@@ -111,8 +111,14 @@
                                             </script>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="uk-modal-footer">
+                                    <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
+                                        <div><button class="uk-button uk-button-secondary" type="submit">Simpan</button></div>
+                                        <div><a class="uk-button uk-button-danger uk-modal-close">Batal</a></div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
