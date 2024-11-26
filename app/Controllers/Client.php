@@ -45,7 +45,19 @@ class Client extends BaseController
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
+        
+        // Processing data
+        $insert = [
+            'name'  => $input['name'],
+            'image' => $input['logo']
+        ];
+        $ClientModel->insert($insert);
+
+        return redirect()->back()->with('Message', 'Client berhasil ditambahkan');
     }
+
+    public function edit($id)
+    {}
 
     public function upload()
     {

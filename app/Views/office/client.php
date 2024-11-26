@@ -3,6 +3,25 @@
 <?= $this->section('main') ?>
 <section class="uk-section uk-section-small">
     <div class="uk-container uk-container-expand">
+        <!-- Alert Container -->
+        <div>
+            <?php if (session('error') !== null) { ?>
+                <div class="uk-alert-danger" uk-alert>
+                    <a href class="uk-alert-close" uk-close></a>
+                    <ul class="uk-list uk-list-disc">
+                        <?php foreach (session('errors') as $error) { ?>
+                            <li><?=$error?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
+            <?php if (session('message') !== null) { ?>
+                <div class="uk-alert-success" uk-alert>
+                    <a href class="uk-alert-close" uk-close></a>
+                    <p><?=session('message')?></p>
+                </div>
+            <?php } ?>
+        </div>
         <!-- Title -->
         <div class="uk-child-width-auto uk-flex-between" uk-grid>
             <div>
@@ -143,7 +162,7 @@
                     </div>
                     <div id="edit-<?=$client['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
                         <div class="uk-modal-dialog uk-margin-auto-vertical">
-                            <form class="uk-margin uk-form-stacked" action="office/client/edit-<?=$client['id']?>" method="post">
+                            <form class="uk-margin uk-form-stacked" action="office/client/edit/<?=$client['id']?>" method="post">
                                 <div class="uk-modal-body">
                                     <?= csrf_field() ?>
                                     <div class="uk-margin">
