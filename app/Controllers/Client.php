@@ -13,7 +13,7 @@ class Client extends BaseController
 
         // Populating Data
         $user = auth()->user();
-        $clients = $ClientModel->paginate(20);
+        $clients = $ClientModel->orderBy('id', 'ASC')->paginate(20, 'clients');
 
         // Parsing Data to View
         $data                   = $this->data;
@@ -21,12 +21,33 @@ class Client extends BaseController
         $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
         $data['user']           = $user;
         $data['clients']        = $clients;
+        $data['pager']          = $ClientModel->pager;
 
         // Rendering View
         return view('office/client', $data);
     }
 
-    public function editupload($id)
+    public function new()
+    {
+        // Calling Models
+        $ClientModel = new ClientModel();
+
+        // Populating Data
+        $input = $this->request->getPost();
+
+        // Validation Rules
+        $rules = [
+            'name'  => 'required|alpha_numeric_space',
+            'logo'  => 'required'
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+    }
+
+    public function upload()
     {
         $input      = $this->request->getFile('upload');
 
