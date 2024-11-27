@@ -57,7 +57,39 @@ class Client extends BaseController
     }
 
     public function edit($id)
-    {}
+    {
+        // Calling Models
+        $ClientModel = new ClientModel();
+
+        // Populating Data
+        $input  = $this->request->getPost();
+        $client = $ClientModel->find($id);
+
+        // Validation Rules
+        $rules = [
+            'name'  => 'required|alpha_numeric_space',
+            'logo'  => 'required'
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // Processing Data
+        if ($client['image'] != $input['logo']) {
+            unlink('images/clients/'.$client['image']);
+        }
+
+        $update = [
+            'name'  => $input['name'],
+            'image' => $input['logo']
+        ];
+
+        $ClientModel->update($id, $update);
+
+        return redirect()->back()->with('Message', 'Client berhasil diperbarui.');
+    }
 
     public function upload()
     {

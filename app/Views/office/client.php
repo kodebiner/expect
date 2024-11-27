@@ -185,8 +185,7 @@
                                                 <span>Maks 500kb</span>
                                             </div>
                                             <progress id="edit-progressbar-<?=$client['id']?>" class="uk-progress" value="0" max="100" hidden></progress>
-                                            <input id="old-logo-<?=$client['id']?>" name="old-logo" value="<?=$client['image']?>" hidden required />
-                                            <input id="new-logo-<?=$client['id']?>" name="new-logo" value="<?=$client['image']?>" hidden required />
+                                            <input id="logo-<?=$client['id']?>" name="logo" value="<?=$client['image']?>" hidden required />
                                             <div id="logo-container-<?=$client['id']?>" class="uk-height-small uk-flex uk-flex-middle uk-flex-center">
                                                 <img src="images/clients/<?=$client['image']?>" style="max-height:100%; max-width:100%;" />
                                             </div>
@@ -218,7 +217,7 @@
                                                         var imagecontainer = document.getElementById("logo-container-<?=$client['id']?>");
 
                                                         imagecontainer.innerHTML = '';
-                                                        document.getElementById("new-logo-<?=$client['id']?>").value = filename;
+                                                        document.getElementById("logo-<?=$client['id']?>").value = filename;
 
                                                         var image = document.createElement('img');
                                                         image.setAttribute('src', 'images/clients/'+filename);
