@@ -26,16 +26,16 @@ SET time_zone = "+00:00";
 --
 
 INSERT INTO `agenda_cat` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Banking & Insurance', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(2, 'Technical Engineering', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(3, 'Health, Safety & Security', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(4, 'Electrical, Instrument & Telecomunication', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(5, 'Human Resources', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(6, 'Financial, Budgeting, Tax, Law & Legal', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(7, 'Logistic, Supplychain, Purchasing, Procurement & Transportation', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(8, 'Soft Skills', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(9, 'Information & Technology', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00'),
-(10, 'Sertifikasi BNSP', '2024-11-18 03:27:45', '2024-11-18 03:27:45', '0000-00-00 00:00:00');
+(1, 'Banking & Insurance', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(2, 'Technical Engineering', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(3, 'Health, Safety & Security', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(4, 'Electrical, Instrument & Telecomunication', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(5, 'Human Resources', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(6, 'Financial, Budgeting, Tax, Law & Legal', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(7, 'Logistic, Supplychain, Purchasing, Procurement & Transportation', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(8, 'Soft Skills', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(9, 'Information & Technology', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null),
+(10, 'Sertifikasi BNSP', '2024-11-18 03:27:45', '2024-11-18 03:27:45', null);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
