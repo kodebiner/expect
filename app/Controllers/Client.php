@@ -13,7 +13,7 @@ class Client extends BaseController
 
         // Populating Data
         $user = auth()->user();
-        $clients = $ClientModel->orderBy('id', 'ASC')->paginate(20, 'clients');
+        $clients = $ClientModel->orderBy('id', 'DESC')->paginate(20, 'clients');
 
         // Parsing Data to View
         $data                   = $this->data;
@@ -37,7 +37,7 @@ class Client extends BaseController
 
         // Validation Rules
         $rules = [
-            'name'  => 'required|alpha_numeric_space',
+            'name'  => 'required|alpha_numeric_punct|is_unique[clients.name]',
             'logo'  => 'required'
         ];
 
@@ -67,7 +67,7 @@ class Client extends BaseController
 
         // Validation Rules
         $rules = [
-            'name'  => 'required|alpha_numeric_space',
+            'name'  => 'required|alpha_numeric_punct|is_unique[clients.name]',
             'logo'  => 'required'
         ];
 
@@ -88,7 +88,32 @@ class Client extends BaseController
 
         $ClientModel->update($id, $update);
 
-        return redirect()->back()->with('Message', 'Client berhasil diperbarui.');
+        return redirect()->back()->with('message', 'Client berhasil diperbarui.');
+    }
+
+    public function delete()
+    {
+        // Calling Models
+        $ClientModel = new ClientModel();
+
+        // Populating Data
+        $input  = $this->request->getPost();
+        
+        // Validation Rules
+        $rules = [
+            'client-id'  => 'required'
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // Processing Data
+        $ClientModel->delete($input['client-id']);
+        $ClientModel->purgeDeleted();
+
+        return redirect()->back()->with('error', 'Client berhasil dihapus.');
     }
 
     public function upload()

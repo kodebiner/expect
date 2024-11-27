@@ -1,11 +1,23 @@
 <?= $this->extend('office/layout') ?>
 
+<?= $this->section('extraSripts') ?>
+<script>
+    jQuery(window).on("load", function () {
+        $('#loading').attr('hidden', '');
+        $('#main').removeAttr('hidden');
+    });
+</script>
+<?= $this->endSection() ?>
+
 <?= $this->section('main') ?>
-<section class="uk-section uk-section-small">
+<section id="loading" class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-center uk-flex-middle">
+    <div uk-spinner="ratio: 3"></div>
+</section>
+<section id="main" class="uk-section uk-section-small" hidden>
     <div class="uk-container uk-container-expand">
         <!-- Alert Container -->
         <div>
-            <?php if (session('error') !== null) { ?>
+            <?php if (session('errors') !== null) { ?>
                 <div class="uk-alert-danger" uk-alert>
                     <a href class="uk-alert-close" uk-close></a>
                     <ul class="uk-list uk-list-disc">
@@ -13,6 +25,12 @@
                             <li><?=$error?></li>
                         <?php } ?>
                     </ul>
+                </div>
+            <?php } ?>
+            <?php if (session('error') !== null) { ?>
+                <div class="uk-alert-danger" uk-alert>
+                    <a href class="uk-alert-close" uk-close></a>
+                    <p><?=session('error')?></p>
                 </div>
             <?php } ?>
             <?php if (session('message') !== null) { ?>
@@ -160,6 +178,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Edit Modal -->
                     <div id="edit-<?=$client['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
                         <div class="uk-modal-dialog uk-margin-auto-vertical">
                             <form class="uk-margin uk-form-stacked" action="office/client/edit/<?=$client['id']?>" method="post">
@@ -260,6 +279,26 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                    <!-- Delete Modal -->
+                    <div id="delete-<?=$client['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
+                        <div class="uk-modal-dialog uk-margin-auto-vertical">
+                            <div class="uk-modal-body">
+                                <div class="uk-modal-title uk-text-center">Anda yakin akan menghapus<br/><b><?=$client['name']?></b>?</div>
+                            </div>
+                            <div class="uk-modal-footer">
+                                <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
+                                    <div>
+                                        <form class="uk-margin uk-form-stacked" action="office/client/delete" method="post">
+                                            <?= csrf_field() ?>
+                                            <input id="client-id" name="client-id" value="<?=$client['id']?>" hidden required />
+                                            <button class="uk-button uk-button-secondary" type="submit">Ya</button>
+                                        </form>
+                                    </div>
+                                    <div><a class="uk-button uk-button-danger uk-modal-close">Tidak</a></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
