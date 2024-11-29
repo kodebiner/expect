@@ -27,6 +27,12 @@ class Users extends BaseController
             $userArray[] = $arr;
         }
 
-        
+        // Parsing Data to View
+        $data                   = $this->data;
+        $data['title']          = 'Daftar Client';
+        $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+        $data['user']           = $activeUser;
+        $data['clients']        = $clients;
+        $data['pager']          = $ClientModel->pager;
     }
 }
