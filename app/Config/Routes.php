@@ -29,6 +29,9 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
         $routes->post('edit-agenda-(:num)', 'Agenda::editagenda/$1');
         $routes->get('delete-agenda-(:num)', 'Agenda::deleteagenda/$1');
     });
+    $routes->group('users', static function ($routes) {
+        $routes->get('/', 'Users::index');
+    });
 });
 
 $routes->get('/', 'Home::index');
