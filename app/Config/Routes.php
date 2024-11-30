@@ -24,10 +24,21 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
         $routes->get('edit-agenda-(:num)', 'Agenda::indexeditcat/$1');
         $routes->post('add-category', 'Agenda::createcat');
         $routes->post('edit-category-(:num)', 'Agenda::editcat/$1');
-        $routes->get('delete-category-(:num)', 'Agenda::deletecat/$1');
+        $routes->get('delete-category', 'Agenda::deletecat');
         $routes->post('add-agenda', 'Agenda::createagenda');
         $routes->post('edit-agenda-(:num)', 'Agenda::editagenda/$1');
-        $routes->get('delete-agenda-(:num)', 'Agenda::deleteagenda/$1');
+        $routes->get('delete-agenda', 'Agenda::deleteagenda');
+    });
+    $routes->group('blog', static function ($routes) {
+        $routes->get('/', 'Blog::indexoffice');
+        $routes->post('upload', 'Blog::upload');
+        // $routes->get('edit-agenda-(:num)', 'Agenda::indexeditcat/$1');
+        // $routes->post('add-category', 'Agenda::createcat');
+        // $routes->post('edit-category-(:num)', 'Agenda::editcat/$1');
+        // $routes->get('delete-category-(:num)', 'Agenda::deletecat/$1');
+        // $routes->post('add-agenda', 'Agenda::createagenda');
+        // $routes->post('edit-agenda-(:num)', 'Agenda::editagenda/$1');
+        // $routes->get('delete-agenda-(:num)', 'Agenda::deleteagenda/$1');
     });
     $routes->group('users', static function ($routes) {
         $routes->get('/', 'Users::index');

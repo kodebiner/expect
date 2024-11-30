@@ -11,6 +11,7 @@
             <div>
                 <h1 class="uk-h3 uk-heading-bullet uk-margin-remove"><?=$title;?></h1>
             </div>
+            <!-- New Agenda Category Modal -->
             <div>
                 <a class="uk-button uk-button-secondary" href="#add" uk-toggle>Tambah Kategori</a>
                 <div id="add" class="uk-flex-top" uk-modal="bg-close:false;">
@@ -105,7 +106,29 @@
                                     <a href="office/agenda/edit-agenda-<?=$category['id']?>" uk-toggle class="uk-icon-button" uk-icon="pencil"></a>
                                 </div>
                                 <div>
-                                    <a href="office/agenda/delete-category-<?=$category['id']?>" class="uk-icon-button uk-button-danger" uk-icon="trash" onclick="return confirm('Anda yakin ingin menghapus Kategori <?=$category['name']?>?')"></a>
+                                    <a href="#delete-<?=$category['id']?>" uk-toggle class="uk-icon-button uk-button-danger" uk-icon="trash"></a>
+                                    <!-- <a href="office/agenda/delete-category-</?=$category['id']?>" class="uk-icon-button uk-button-danger" uk-icon="trash" onclick="return confirm('Anda yakin ingin menghapus Kategori </?=$category['name']?>?')"></a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delete Modal -->
+                    <div id="delete-<?=$category['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
+                        <div class="uk-modal-dialog uk-margin-auto-vertical">
+                            <div class="uk-modal-body">
+                                <div class="uk-modal-title uk-text-center">Anda yakin akan menghapus<br/><b><?=$category['name']?></b>?</div>
+                            </div>
+                            <div class="uk-modal-footer">
+                                <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
+                                    <div>
+                                        <form class="uk-margin uk-form-stacked" action="office/agenda/delete-category" method="post">
+                                            <?= csrf_field() ?>
+                                            <input id="category-id" name="category-id" value="<?=$category['id']?>" hidden required />
+                                            <button class="uk-button uk-button-secondary" type="submit">Ya</button>
+                                        </form>
+                                    </div>
+                                    <div><a class="uk-button uk-button-danger uk-modal-close">Tidak</a></div>
                                 </div>
                             </div>
                         </div>

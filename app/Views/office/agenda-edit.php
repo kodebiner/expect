@@ -115,11 +115,14 @@
                                         <a href="#edit-<?=$agenda['id']?>" uk-toggle class="uk-icon-button" uk-icon="pencil"></a>
                                     </div>
                                     <div>
-                                        <a href="office/agenda/delete-agenda-<?=$agenda['id']?>" class="uk-icon-button uk-button-danger" uk-icon="trash" onclick="return confirm('Anda yakin ingin menghapus Agenda <?=$agenda['name']?>?')"></a>
+                                        <a href="#delete-<?=$agenda['id']?>" uk-toggle class="uk-icon-button uk-button-danger" uk-icon="trash"></a>
+                                        <!-- <a href="office/agenda/delete-agenda-</?=$agenda['id']?>" class="uk-icon-button uk-button-danger" uk-icon="trash" onclick="return confirm('Anda yakin ingin menghapus Agenda </?=$agenda['name']?>?')"></a> -->
                                     </div>
                                 </div>
                             </td>
                         </tr>
+                        
+                        <!-- Edit Modal -->
                         <div id="edit-<?=$agenda['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
                             <div class="uk-modal-dialog uk-margin-auto-vertical">
                                 <form class="uk-margin uk-form-stacked" action="office/agenda/edit-agenda-<?=$agenda['id']?>" method="post">
@@ -140,6 +143,27 @@
                                         </div>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+
+                        <!-- Delete Modal -->
+                        <div id="delete-<?=$agenda['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
+                            <div class="uk-modal-dialog uk-margin-auto-vertical">
+                                <div class="uk-modal-body">
+                                    <div class="uk-modal-title uk-text-center">Anda yakin akan menghapus<br/><b><?=$agenda['name']?></b>?</div>
+                                </div>
+                                <div class="uk-modal-footer">
+                                    <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
+                                        <div>
+                                            <form class="uk-margin uk-form-stacked" action="office/agenda/delete-agenda" method="post">
+                                                <?= csrf_field() ?>
+                                                <input id="agenda-id" name="agenda-id" value="<?=$agenda['id']?>" hidden required />
+                                                <button class="uk-button uk-button-secondary" type="submit">Ya</button>
+                                            </form>
+                                        </div>
+                                        <div><a class="uk-button uk-button-danger uk-modal-close">Tidak</a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php } ?>

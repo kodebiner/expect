@@ -36,6 +36,17 @@ class Agenda extends BaseController
         // Populating data
         $input                  = $this->request->getPost();
 
+        // Validation Rules
+        $rules = [
+            'name'  => 'required|alpha_numeric_punct|is_unique[agenda_cat.name]',
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
+        // Processing data
         foreach ($input['name'] as $nameValue) {
             $data['name']   = $nameValue;
 
@@ -55,6 +66,17 @@ class Agenda extends BaseController
         // Populating data
         $input          = $this->request->getPost();
 
+        // Validation Rules
+        $rules = [
+            'name-category'  => 'required|alpha_numeric_punct|is_unique[agenda_cat.name]',
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
+        // Processing data
         $data = [
             'id'            => $id,
             'name'          => $input['name-category'],
@@ -67,17 +89,34 @@ class Agenda extends BaseController
         return redirect()->back()->with('message', 'Kategori Berhasil Diubah!');
     }
 
-    public function deletecat($id)
+    public function deletecat()
     {
         // Calling Models
         $AgendaCategoryModel    = new AgendaCategoryModel();
         $AgendaModel            = new AgendaModel();
 
-        // Removing Agenda Data
-        $AgendaModel->where('cat_id', $id)->delete();
+        // // Removing Agenda Data
+        // $AgendaModel->where('cat_id', $id)->delete();
 
-        // Removing Category Data
-        $AgendaCategoryModel->delete($id);
+        // // Removing Category Data
+        // $AgendaCategoryModel->delete($id);
+        
+        // Validation Rules
+        $rules = [
+            'category-id'  => 'required'
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // Processing Data
+        $AgendaModel->where('cat_id', 'category-id')->delete();
+        $AgendaModel->purgeDeleted();
+
+        $AgendaCategoryModel->delete($AgendaCategoryModel['category-id']);
+        $AgendaCategoryModel->purgeDeleted();
 
         // Rendering View
         return redirect()->to('office/agenda')->with('error', 'Kategori Berhasil Dihapus!');
@@ -115,6 +154,17 @@ class Agenda extends BaseController
         // Populating data
         $input                  = $this->request->getPost();
 
+        // Validation Rules
+        $rules = [
+            'name'  => 'required|alpha_numeric_punct|is_unique[agenda.name]',
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
+        // Processing data
         foreach ($input['name'] as $nameValue) {
             $data['name']   = $nameValue;
             $data['cat_id'] = $input['cat_id'];
@@ -124,7 +174,7 @@ class Agenda extends BaseController
         }
         
         // Rendering View
-        return redirect()->back()->with('message', 'Kategori Berhasil Ditambahkan!');
+        return redirect()->back()->with('message', 'Agenda Berhasil Ditambahkan!');
     }
 
     public function editagenda($id)
@@ -135,6 +185,17 @@ class Agenda extends BaseController
         // Populating data
         $input          = $this->request->getPost();
 
+        // Validation Rules
+        $rules = [
+            'name'  => 'required|alpha_numeric_punct|is_unique[agenda.name]',
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
+        // Processing data
         $data = [
             'id'            => $id,
             'cat_id'        => $input['cat_id'],
@@ -145,18 +206,32 @@ class Agenda extends BaseController
         $AgendaModel->save($data);
 
         // Rendering View
-        return redirect()->back()->with('message', 'Kategori Berhasil Diubah!');
+        return redirect()->back()->with('message', 'Agenda Berhasil Diubah!');
     }
 
-    public function deleteagenda($id)
+    public function deleteagenda()
     {
         // Calling Models
         $AgendaModel            = new AgendaModel();
 
-        // Removing Agenda Data
-        $AgendaModel->delete($id);
+        // // Removing Agenda Data
+        // $AgendaModel->delete($id);
+        
+        // Validation Rules
+        $rules = [
+            'agenda-id'  => 'required'
+        ];
+
+        // Validating
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // Processing Data
+        $AgendaModel->delete($AgendaModel['agenda-id']);
+        $AgendaModel->purgeDeleted();
 
         // Rendering View
-        return redirect()->back()->with('error', 'Kategori Berhasil Dihapus!');
+        return redirect()->back()->with('error', 'Agenda Berhasil Dihapus!');
     }
 }
