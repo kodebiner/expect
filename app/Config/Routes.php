@@ -42,6 +42,8 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
     });
     $routes->group('users', static function ($routes) {
         $routes->get('/', 'Users::index');
+        $routes->post('new', 'Users::new');
+        $routes->post('edit/(:num)', 'Users::edit/$1');
     });
 });
 
