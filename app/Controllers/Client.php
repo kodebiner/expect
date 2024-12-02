@@ -53,7 +53,7 @@ class Client extends BaseController
         ];
         $ClientModel->insert($insert);
 
-        return redirect()->back()->with('Message', 'Client berhasil ditambahkan');
+        return redirect()->back()->with('message', 'Client berhasil ditambahkan');
     }
 
     public function edit($id)
