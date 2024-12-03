@@ -32,13 +32,9 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
     $routes->group('blog', static function ($routes) {
         $routes->get('/', 'Blog::indexoffice');
         $routes->post('upload', 'Blog::upload');
-        // $routes->get('edit-agenda-(:num)', 'Agenda::indexeditcat/$1');
-        // $routes->post('add-category', 'Agenda::createcat');
-        // $routes->post('edit-category-(:num)', 'Agenda::editcat/$1');
-        // $routes->get('delete-category-(:num)', 'Agenda::deletecat/$1');
-        // $routes->post('add-agenda', 'Agenda::createagenda');
-        // $routes->post('edit-agenda-(:num)', 'Agenda::editagenda/$1');
-        // $routes->get('delete-agenda-(:num)', 'Agenda::deleteagenda/$1');
+        $routes->post('new', 'Blog::new');
+        $routes->get('edit/(:num)', 'Blog::edit/$1');
+        $routes->get('delete', 'Blog::delete');
     });
     $routes->group('users', ['filter' => 'group:superadmin'], static function ($routes) {
         $routes->get('/', 'Users::index');
