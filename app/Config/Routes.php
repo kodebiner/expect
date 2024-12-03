@@ -46,6 +46,11 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
         $routes->post('edit/(:num)', 'Users::edit/$1');
         $routes->post('delete', 'Users::delete');
     });
+    $routes->group('gallery', static function ($routes) {
+        $routes->get('/', 'Gallery::index');
+        $routes->post('upload', 'Gallery::upload');
+        $routes->post('delete', 'Gallery::delete');
+    });
 });
 
 $routes->get('/', 'Home::index');
