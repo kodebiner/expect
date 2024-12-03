@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="uk-from-controls" id="createCategory">
                                         <div id='newCategory0'>
-                                            <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Kategori" />
+                                            <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Kategori" required />
                                         </div>
                                     </div>
                                 </div>
@@ -54,6 +54,7 @@
                                         var createNameInput = document.createElement('input');
                                         createNameInput.setAttribute('type', 'text');
                                         createNameInput.setAttribute('class', 'uk-input');
+                                        createNameInput.setAttribute('required', '');
                                         createNameInput.setAttribute('placeholder', 'Nama Kategori');
                                         createNameInput.setAttribute('id', 'name[' + createCount + ']');
                                         createNameInput.setAttribute('name', 'name[' + createCount + ']');

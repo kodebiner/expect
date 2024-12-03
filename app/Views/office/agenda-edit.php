@@ -42,7 +42,7 @@
                             </div>
                             <div class="uk-from-controls" id="createAgenda">
                                 <div id='newAgenda0'>
-                                    <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Agenda" />
+                                    <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Agenda" required />
                                 </div>
                             </div>
                         </div>
@@ -66,6 +66,7 @@
                                 var createNameInput = document.createElement('input');
                                 createNameInput.setAttribute('type', 'text');
                                 createNameInput.setAttribute('class', 'uk-input');
+                                createNameInput.setAttribute('required', '');
                                 createNameInput.setAttribute('placeholder', 'Nama Agenda');
                                 createNameInput.setAttribute('id', 'name[' + createCount + ']');
                                 createNameInput.setAttribute('name', 'name[' + createCount + ']');

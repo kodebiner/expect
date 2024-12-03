@@ -36,18 +36,18 @@ class Agenda extends BaseController
         // Populating data
         $input                  = $this->request->getPost();
 
-        // Validation Rules
-        $rules = [
-            'name'  => 'required|alpha_numeric_punct|is_unique[agenda_cat.name]',
-        ];
-
-        // Validating
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-        
         // Processing data
         foreach ($input['name'] as $nameValue) {
+            // Validation Rules
+            $rules = [
+                'name.*'  => 'required|alpha_numeric_punct|is_unique[agenda_cat.name]',
+            ];
+    
+            // Validating
+            if (!$this->validate($rules)) {
+                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            }
+    
             $data['name']   = $nameValue;
 
             // Inserting Category
@@ -156,7 +156,7 @@ class Agenda extends BaseController
 
         // Validation Rules
         $rules = [
-            'name'  => 'required|alpha_numeric_punct|is_unique[agenda.name]',
+            'name.*'  => 'required|alpha_numeric_punct|is_unique[agenda.name]',
         ];
 
         // Validating
