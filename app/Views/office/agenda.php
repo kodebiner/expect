@@ -1,10 +1,45 @@
 <?= $this->extend('office/layout') ?>
 
 <?= $this->section('main') ?>
-<section class="uk-section uk-section-small">
+
+<!-- Loading Js -->
+<script>
+    jQuery(window).on("load", function () {
+        $('#loading').attr('hidden', '');
+        $('#main').removeAttr('hidden');
+    });
+</script>
+
+<section id="loading" class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-center uk-flex-middle">
+    <div uk-spinner="ratio: 3"></div>
+</section>
+<section id="main" class="uk-section uk-section-small" hidden>
     <div class="uk-container uk-container-expand">
-        <!-- Alert -->
-        <?= view('Views/auth/_message_block') ?>
+        <!-- Alert Container -->
+        <div>
+            <?php if (session('errors') !== null) { ?>
+                <div class="uk-alert-danger" uk-alert>
+                    <a href class="uk-alert-close" uk-close></a>
+                    <ul class="uk-list uk-list-disc">
+                        <?php foreach (session('errors') as $error) { ?>
+                            <li><?=$error?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
+            <?php if (session('error') !== null) { ?>
+                <div class="uk-alert-danger" uk-alert>
+                    <a href class="uk-alert-close" uk-close></a>
+                    <p><?=session('error')?></p>
+                </div>
+            <?php } ?>
+            <?php if (session('message') !== null) { ?>
+                <div class="uk-alert-success" uk-alert>
+                    <a href class="uk-alert-close" uk-close></a>
+                    <p><?=session('message')?></p>
+                </div>
+            <?php } ?>
+        </div>
 
         <!-- Title -->
         <div class="uk-child-width-auto uk-flex-between" uk-grid>

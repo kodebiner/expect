@@ -31,10 +31,12 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
     });
     $routes->group('blog', static function ($routes) {
         $routes->get('/', 'Blog::indexoffice');
-        $routes->post('upload', 'Blog::upload');
+        $routes->get('add', 'Blog::indexadd');
+        $routes->get('edit-(:num)', 'Blog::indexedit/$1');
         $routes->post('new', 'Blog::new');
-        $routes->get('edit/(:num)', 'Blog::edit/$1');
-        $routes->get('delete', 'Blog::delete');
+        $routes->post('edit/(:num)', 'Blog::edit/$1');
+        $routes->post('delete', 'Blog::delete');
+        $routes->post('upload', 'Blog::upload');
     });
     $routes->group('users', ['filter' => 'group:superadmin'], static function ($routes) {
         $routes->get('/', 'Users::index');

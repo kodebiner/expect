@@ -55,6 +55,21 @@ class Blog extends BaseController
         // Rendering View
         return view('office/blog', $data);
     }
+    
+    public function indexadd()
+    {
+        // Populating Data
+        $user       = auth()->user();
+
+        // Parsing Data to View
+        $data                   = $this->data;
+        $data['title']          = 'Formulir Tambah Artikel';
+        $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+        $data['user']           = $user;
+
+        // Rendering View
+        return view('office/blog-add', $data);
+    }
 
     public function new()
     {
@@ -98,7 +113,27 @@ class Blog extends BaseController
         ];
         $BlogModel->insert($insert);
 
-        return redirect()->back()->with('Message', 'Artikel berhasil ditambahkan');
+        return redirect()->to('office/blog')->with('message', 'Artikel berhasil ditambahkan');
+    }
+    
+    public function indexedit($id)
+    {
+        // Calling Models
+        $BlogModel  = new BlogModel();
+
+        // Populating Data
+        $user       = auth()->user();
+        $blog       = $BlogModel->find($id);
+
+        // Parsing Data to View
+        $data                   = $this->data;
+        $data['title']          = 'Formulir Perubahan Artikel';
+        $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+        $data['user']           = $user;
+        $data['blog']           = $blog;
+
+        // Rendering View
+        return view('office/blog-edit', $data);
     }
 
     public function edit($id)
@@ -112,8 +147,8 @@ class Blog extends BaseController
 
         // Validation Rules
         $rules = [
-            'title'  => 'required|alpha_numeric_punct|is_unique[blog.title]',
-            'logo'  => 'required'
+            'title'     => 'required|alpha_numeric_punct|is_unique[blog.title]',
+            'images'    => 'required'
         ];
 
         // Validating
@@ -149,7 +184,7 @@ class Blog extends BaseController
 
         $BlogModel->update($id, $update);
 
-        return redirect()->back()->with('message', 'Client berhasil diperbarui.');
+        return redirect()->to('office/blog')->with('message', 'Artikel berhasil diperbarui.');
     }
 
     public function delete()
@@ -174,7 +209,7 @@ class Blog extends BaseController
         $BlogModel->delete($input['blog-id']);
         $BlogModel->purgeDeleted();
 
-        return redirect()->back()->with('error', 'Artikell berhasil dihapus.');
+        return redirect()->back()->with('error', 'Artikel berhasil dihapus.');
     }
 
     public function upload()
