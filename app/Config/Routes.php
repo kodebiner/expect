@@ -40,10 +40,11 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
         // $routes->post('edit-agenda-(:num)', 'Agenda::editagenda/$1');
         // $routes->get('delete-agenda-(:num)', 'Agenda::deleteagenda/$1');
     });
-    $routes->group('users', static function ($routes) {
+    $routes->group('users', ['filter' => 'group:superadmin'], static function ($routes) {
         $routes->get('/', 'Users::index');
         $routes->post('new', 'Users::new');
         $routes->post('edit/(:num)', 'Users::edit/$1');
+        $routes->post('delete', 'Users::delete');
     });
 });
 

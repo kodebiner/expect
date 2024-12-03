@@ -121,4 +121,18 @@ class Users extends BaseController
 
         return redirect()->back()->with('message', 'Pengguna berhasil diubah');
     }
+
+    public function delete()
+    {
+        // Calling Models
+        $UserModel  = auth()->getProvider();
+
+        // Populating Data
+        $input = $this->request->getPost();
+
+        // Processing Data
+        $UserModel->delete($input['user-id'], true);
+
+        return redirect()->back()->with('error', 'Pengguna berhasil dihapus');
+    }
 }

@@ -250,6 +250,26 @@
                 </div>
             </div>
             <!-- Delete Model -->
+            <div id="delete-<?=$list['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
+                <div class="uk-modal-dialog uk-margin-auto-vertical">
+                    <div class="uk-modal-body">
+                        <div class="uk-modal-title uk-text-center">Anda yakin akan menghapus<br/><b><?=$list['username']?></b>?</div>
+                        <p class="uk-text-center">Dengan menghapus pengguna maka anda tidak dapat lagi menggunakan <b>username</b> dan <b>email</b> tersebut.</p>
+                    </div>
+                    <div class="uk-modal-footer">
+                        <div class="uk-clild-width-auto uk-grid-small uk-flex-center" uk-grid>
+                            <div>
+                                <form class="uk-margin uk-form-stacked" action="office/users/delete" method="post">
+                                    <?= csrf_field() ?>
+                                    <input id="user-id-<?=$list['id']?>" name="user-id" value="<?=$list['id']?>" hidden required />
+                                    <button class="uk-button uk-button-secondary" type="submit">Ya</button>
+                                </form>
+                            </div>
+                            <div><a class="uk-button uk-button-danger uk-modal-close">Tidak</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <?php } ?>
     </div>
 </section>
