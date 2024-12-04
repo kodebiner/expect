@@ -121,53 +121,53 @@
             </div>
             <?= csrf_field() ?>
             <div class="uk-margin">
-                <label class="uk-form-label" for="featured-<?=$blog['id']?>">Featured</label>
+                <label class="uk-form-label" for="featured">Featured</label>
                 <label class="switch uk-margin-small-left">
                     <?php if ($blog['featured'] == '1') { ?>
-                        <input id="featured-<?=$blog['id']?>" name="featured" type="checkbox" checked>
+                        <input id="featured" name="featured" type="checkbox" checked>
                     <?php } else { ?>
-                        <input id="featured-<?=$blog['id']?>" name="featured" type="checkbox">
+                        <input id="featured" name="featured" type="checkbox">
                     <?php } ?>
                     <span class="slider round"></span>
                 </label>
             </div>
 
             <div class="uk-margin">
-                <label class="uk-form-label" for="highlight-<?=$blog['id']?>">Highlight</label>
+                <label class="uk-form-label" for="highlight">Highlight</label>
                 <label class="switch uk-margin-small-left">
                     <?php if ($blog['highlight'] == '1') { ?>
-                        <input id="highlight-<?=$blog['id']?>" name="highlight" type="checkbox" checked>
+                        <input id="highlight" name="highlight" type="checkbox" checked>
                     <?php } else { ?>
-                        <input id="highlight-<?=$blog['id']?>" name="highlight" type="checkbox">
+                        <input id="highlight" name="highlight" type="checkbox">
                     <?php } ?>
                     <span class="slider round"></span>
                 </label>
             </div>
 
             <div class="uk-margin">
-                <label class="uk-form-label" for="title-<?=$blog['id']?>">Judul Artikel</label>
+                <label class="uk-form-label" for="title">Judul Artikel</label>
                 <div class="uk-from-controls">
-                    <input class="uk-input" id="title-<?=$blog['id']?>" name="title" type="text" placeholder="Judul Artikel" value="<?=$blog['title']?>" required />
+                    <input class="uk-input" id="title" name="title" type="text" placeholder="Judul Artikel" value="<?=$blog['title']?>" onchange="preview()" required />
                 </div>
             </div>
 
             <div class="uk-margin">
-                <label class="uk-form-label" for="description-<?=$blog['id']?>">Deskripsi</label>
+                <label class="uk-form-label" for="description">Deskripsi</label>
                 <div class="uk-from-controls">
-                    <input class="uk-input" id="description-<?=$blog['id']?>" name="description" type="text" placeholder="Deskripsi" value="<?=$blog['description']?>" required/>
+                    <input class="uk-input" id="description" name="description" type="text" placeholder="Deskripsi" value="<?=$blog['description']?>" required/>
                 </div>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label">Konten</label>
                 <div class="uk-form-controls">
-                    <textarea name="content" id="file-picker-<?=$blog['id']?>" placeholder="Masukkan Konten.." onchange="preview()"><?= $blog['content'] ?></textarea>
+                    <textarea name="content" id="file-picker" placeholder="Masukkan Konten.." onchange="preview()"><?= $blog['content'] ?></textarea>
                 </div>
             </div>
 
             <script>
                 tinymce.init({
-                    selector:                   'textarea#file-picker-<?=$blog['id']?>',
+                    selector:                   'textarea#file-picker',
                     plugins:                    ' link code table lists wordcount image searchreplace fullscreen autolink help',
                     toolbar:                    ['undo redo | styles bold italic underline strikethrough subscript superscript | backcolor forecolor | table link image | alignleft aligncenter alignright alignjustify | numlist bullist | lineheight | indent outdent | searchreplace fullscreen help code'],
                     link_default_target:        '_blank',
@@ -214,9 +214,9 @@
             </script>
 
             <div class="uk-margin">
-                <label class="uk-form-label" for="new-images-<?=$blog['id']?>">Foto Sampul</label>
+                <label class="uk-form-label" for="new-images">Foto Sampul</label>
                 <div class="uk-from-controls">
-                    <div class="edit-upload-<?=$blog['id']?> uk-placeholder uk-text-center">
+                    <div class="edit-upload uk-placeholder uk-text-center">
                         <span uk-icon="icon:move; ratio:2;"></span><br/>
                         <span class="uk-text-middle">Tarik dan lepas file di sini atau</span>
                         <div uk-form-custom>
@@ -226,14 +226,14 @@
                         <br/>
                         <span>Maks 500kb</span>
                     </div>
-                    <progress id="edit-progressbar-<?=$blog['id']?>" class="uk-progress" value="0" max="100" hidden></progress>
-                    <input id="images-<?=$blog['id']?>" name="images" value="<?=$blog['images']?>" hidden required />
-                    <div id="images-container-<?=$blog['id']?>" class="uk-height-small uk-flex uk-flex-middle uk-flex-center">
+                    <progress id="edit-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+                    <input id="images" name="images" value="<?=$blog['images']?>" hidden onchange="preview()" required />
+                    <div id="images-container" class="uk-height-small uk-flex uk-flex-middle uk-flex-center">
                         <img src="images/blog/<?=$blog['images']?>" style="max-height:100%; max-width:100%;" />
                     </div>
                     <script>
-                        var bar = document.getElementById('edit-progressbar-<?=$blog['id']?>');
-                        UIkit.upload('.edit-upload-<?=$blog['id']?>', {
+                        var bar = document.getElementById('edit-progressbar');
+                        UIkit.upload('.edit-upload', {
                             url: 'office/blog/upload',
                             multiple: false,
                             name: 'upload',
@@ -256,16 +256,19 @@
                             complete: function () {
                                 console.log('complete', arguments);
                                 var filename = arguments[0].response;
-                                var imagecontainer = document.getElementById("images-container-<?=$blog['id']?>");
+                                var imagecontainer = document.getElementById("images-container");
 
                                 imagecontainer.innerHTML = '';
-                                document.getElementById("images-<?=$blog['id']?>").value = filename;
+                                document.getElementById("images").value = filename;
 
                                 var image = document.createElement('img');
                                 image.setAttribute('src', 'images/blog/'+filename);
                                 image.setAttribute('style', 'max-height:100%; max-width:100%;');
 
                                 imagecontainer.appendChild(image);
+
+                                $('#previewimage').attr('src', 'images/blog/'+filename);
+                                $('#previewimage').attr('width', '300');
                             },
                             loadStart: function (e) {
                                 console.log('loadStart', arguments);
@@ -296,5 +299,44 @@
             </div>
         </form>
     </div>
+
+    <!-- Preview Modal -->
+    <div class="uk-modal-full" id="preview" uk-modal="bg-close:false;">
+        <div class="uk-modal-dialog" uk-height-viewport>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Preview Ubah Artikel <?=$blog['title']?></h2>
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+            </div>
+
+            <div class="uk-modal-body">
+                <article class="uk-section-muted uk-inverse-dark uk-section" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;">
+                    <div class="uk-container">
+                        <div class="uk-width-1-1 uk-margin" uk-scrollspy-class>
+                            <picture class="uk-width-1-1">
+                                <img id="previewimage" class="uk-width-1-1" src="images/blog/<?=$blog['images']?>" alt="" />
+                            </picture>
+                        </div>
+                        <div class="uk-margin-large uk-container uk-container-xsmall">
+                            <h1 class="uk-margin uk-text-center" id="previewtitle" uk-scrollspy-class><?=$blog['title']?></h1>
+                            <div class="uk-panel uk-margin" id="previewfulltext" uk-scrollspy-class><?=$blog['content']?></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function preview(inst) {
+            var title           = $('#title').val();
+            // var description     = $('#ringkasan').val();
+            // var introtext       = $('#pendahuluan').val();
+            var fulltext        = $('#file-picker').val();
+
+            $('#previewtitle').html(title);
+            // $('#previewintrotext').html(introtext);
+            $('#previewfulltext').html(tinyMCE.activeEditor.getContent());
+        };
+    </script>
 </section>
 <?= $this->endSection() ?>

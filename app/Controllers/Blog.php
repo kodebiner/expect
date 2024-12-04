@@ -102,9 +102,12 @@ class Blog extends BaseController
         } else {
             $highlight = 0;
         }
+
+        $slug = preg_replace('/\s+/', '-', $input['title']);
         
         $insert = [
             'title'         => $input['title'],
+            'slug'          => $slug,
             'images'        => $input['images'],
             'description'   => $input['description'],
             'content'       => $input['content'],
@@ -147,7 +150,7 @@ class Blog extends BaseController
 
         // Validation Rules
         $rules = [
-            'title'     => 'required|alpha_numeric_punct|is_unique[blog.title]',
+            'title'     => 'required|alpha_numeric_punct|is_unique[blog.title,blog.id,'.$id.']',
             'images'    => 'required'
         ];
 
@@ -207,7 +210,6 @@ class Blog extends BaseController
 
         // Processing Data
         $BlogModel->delete($input['blog-id']);
-        $BlogModel->purgeDeleted();
 
         return redirect()->back()->with('error', 'Artikel berhasil dihapus.');
     }

@@ -139,7 +139,7 @@
             <div class="uk-margin">
                 <label class="uk-form-label" for="title">Judul Artikel</label>
                 <div class="uk-from-controls">
-                    <input class="uk-input" id="title" name="title" type="text" placeholder="Judul Artikel" required/>
+                    <input class="uk-input" id="title" name="title" type="text" placeholder="Judul Artikel" onchange="preview()" required/>
                 </div>
             </div>
 
@@ -219,7 +219,7 @@
                         <span>Maks 500kb</span>
                     </div>
                     <progress id="new-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
-                    <input id="images" name="images" required hidden />
+                    <input id="images" name="images" required onchange="preview()" hidden />
                     <div id="images-container" class="uk-height-small uk-flex uk-flex-middle uk-flex-center"></div>
                     <script>
                         var bar = document.getElementById('new-progressbar');
@@ -256,6 +256,9 @@
                                 image.setAttribute('style', 'max-height:100%; max-width:100%;');
 
                                 imagecontainer.appendChild(image);
+
+                                $('#previewimage').attr('src', 'images/blog/'+filename);
+                                $('#previewimage').attr('width', '300');
                             },
                             loadStart: function (e) {
                                 console.log('loadStart', arguments);
@@ -286,5 +289,44 @@
             </div>
         </form>
     </div>
+
+    <!-- Preview Modal -->
+    <div class="uk-modal-full" id="preview" uk-modal="bg-close:false;">
+        <div class="uk-modal-dialog" uk-height-viewport>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Preview Tambah Artikel</h2>
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+            </div>
+
+            <div class="uk-modal-body">
+                <article class="uk-section-muted uk-inverse-dark uk-section" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;">
+                    <div class="uk-container">
+                        <div class="uk-width-1-1 uk-margin" uk-scrollspy-class>
+                            <picture class="uk-width-1-1">
+                                <img id="previewimage" class="uk-width-1-1" src="" alt="" />
+                            </picture>
+                        </div>
+                        <div class="uk-margin-large uk-container uk-container-xsmall">
+                            <h1 class="uk-margin uk-text-center" id="previewtitle" uk-scrollspy-class></h1>
+                            <div class="uk-panel uk-margin" id="previewfulltext" uk-scrollspy-class></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function preview(inst) {
+            var title           = $('#title').val();
+            // var description     = $('#ringkasan').val();
+            // var introtext       = $('#pendahuluan').val();
+            var fulltext        = $('#file-picker').val();
+
+            $('#previewtitle').html(title);
+            // $('#previewintrotext').html(introtext);
+            $('#previewfulltext').html(tinyMCE.activeEditor.getContent());
+        };
+    </script>
 </section>
 <?= $this->endSection() ?>

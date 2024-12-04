@@ -113,10 +113,10 @@ class Agenda extends BaseController
 
         // Processing Data
         $AgendaModel->where('cat_id', 'category-id')->delete();
-        $AgendaModel->purgeDeleted();
+        // $AgendaModel->purgeDeleted();
 
         $AgendaCategoryModel->delete($AgendaCategoryModel['category-id']);
-        $AgendaCategoryModel->purgeDeleted();
+        // $AgendaCategoryModel->purgeDeleted();
 
         // Rendering View
         return redirect()->to('office/agenda')->with('error', 'Kategori Berhasil Dihapus!');
@@ -229,7 +229,7 @@ class Agenda extends BaseController
 
         // Processing Data
         $AgendaModel->delete($AgendaModel['agenda-id']);
-        $AgendaModel->purgeDeleted();
+        // $AgendaModel->purgeDeleted();
 
         // Rendering View
         return redirect()->back()->with('error', 'Agenda Berhasil Dihapus!');
