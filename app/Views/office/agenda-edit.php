@@ -76,8 +76,11 @@
                                 </div>
                             </div>
                             <div class="uk-from-controls" id="createAgenda">
-                                <div id='newAgenda0'>
-                                    <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Agenda" required />
+                                <div id='newAgenda0' class="uk-margin-small" uk-grid>
+                                    <div class="uk-width-5-6">
+                                        <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Agenda" required />
+                                    </div>
+                                    <div></div>
                                 </div>
                             </div>
                         </div>

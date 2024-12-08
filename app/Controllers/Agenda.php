@@ -35,27 +35,35 @@ class Agenda extends BaseController
 
         // Populating data
         $input                  = $this->request->getPost();
-
+        $errors                 = [];
+    
         // Processing data
         foreach ($input['name'] as $nameValue) {
-            // Validation Rules
-            $rules = [
-                'name.*'  => 'required|alpha_numeric_punct|is_unique[agenda_cat.name]',
-            ];
-    
-            // Validating
-            if (!$this->validate($rules)) {
-                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-            }
-    
-            $data['name']   = $nameValue;
+            $inn = ['name' => $nameValue];
+            if (!$this->validateData($inn, [
+                'name' => ['label' => 'Nama', 'rules' => 'required|alpha_numeric_punct|is_unique[agenda_cat.name]']
+            ])) {
+                $errors[] = $this->validator->getErrors();
+            } else {
+                $data['name']   = $nameValue;
 
-            // Inserting Category
-            $AgendaCategoryModel->insert($data);
+                // Inserting Category
+                $AgendaCategoryModel->insert($data);
+            }
         }
         
         // Rendering View
-        return redirect()->to('office/agenda')->with('message', 'Kategori Berhasil Ditambahkan!');
+        if (!empty($errors)) {
+            $dataerror = [];
+            foreach ($errors as $errdata) {
+                foreach ($errdata as $err) {
+                    $dataerror[] = $err;
+                }
+            }
+            return redirect()->to('office/agenda')->with('errors', $dataerror);
+        } else {
+            return redirect()->to('office/agenda')->with('message', 'Kategori Berhasil Ditambahkan!');
+        }
     }
 
     public function editcat($id)
@@ -68,7 +76,7 @@ class Agenda extends BaseController
 
         // Validation Rules
         $rules = [
-            'name-category'  => 'required|alpha_numeric_punct|is_unique[agenda_cat.name]',
+            'name-category'  => 'required|alpha_numeric_punct|is_unique[agenda_cat.name,agenda_cat.id,'.$id.']',
         ];
 
         // Validating
@@ -86,7 +94,7 @@ class Agenda extends BaseController
         $AgendaCategoryModel->save($data);
 
         // Rendering View
-        return redirect()->back()->with('message', 'Kategori Berhasil Diubah!');
+        return redirect()->to('office/agenda')->with('message', 'Kategori Berhasil Diubah!');
     }
 
     public function deletecat()
@@ -153,28 +161,58 @@ class Agenda extends BaseController
 
         // Populating data
         $input                  = $this->request->getPost();
-
-        // Validation Rules
-        $rules = [
-            'name.*'  => 'required|alpha_numeric_punct|is_unique[agenda.name]',
-        ];
-
-        // Validating
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-        
+        $errors                 = [];
+    
         // Processing data
         foreach ($input['name'] as $nameValue) {
-            $data['name']   = $nameValue;
-            $data['cat_id'] = $input['cat_id'];
+            $inn = ['name' => $nameValue];
+            if (!$this->validateData($inn, [
+                'name' => ['label' => 'Nama', 'rules' => 'required|alpha_numeric_punct|is_unique[agenda.name]']
+            ])) {
+                $errors[] = $this->validator->getErrors();
+            } else {
+                $data['name']   = $nameValue;
+                $data['cat_id'] = $input['cat_id'];
 
-            // Inserting Agenda
-            $AgendaModel->insert($data);
+                // Inserting Category
+                $AgendaModel->insert($data);
+            }
         }
         
         // Rendering View
-        return redirect()->back()->with('message', 'Agenda Berhasil Ditambahkan!');
+        if (!empty($errors)) {
+            $dataerror = [];
+            foreach ($errors as $errdata) {
+                foreach ($errdata as $err) {
+                    $dataerror[] = $err;
+                }
+            }
+            return redirect()->back()->with('errors', $dataerror);
+        } else {
+            return redirect()->back()->with('message', 'Agenda Berhasil Ditambahkan!');
+        }
+
+        // // Validation Rules
+        // $rules = [
+        //     'name.*'  => 'required|alpha_numeric_punct|is_unique[agenda.name]',
+        // ];
+
+        // // Validating
+        // if (!$this->validate($rules)) {
+        //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        // }
+        
+        // // Processing data
+        // foreach ($input['name'] as $nameValue) {
+        //     $data['name']   = $nameValue;
+        //     $data['cat_id'] = $input['cat_id'];
+
+        //     // Inserting Agenda
+        //     $AgendaModel->insert($data);
+        // }
+        
+        // // Rendering View
+        // return redirect()->back()->with('message', 'Agenda Berhasil Ditambahkan!');
     }
 
     public function editagenda($id)
@@ -187,7 +225,7 @@ class Agenda extends BaseController
 
         // Validation Rules
         $rules = [
-            'name'  => 'required|alpha_numeric_punct|is_unique[agenda.name]',
+            'name'  => 'required|alpha_numeric_punct|is_unique[agenda.name,agenda.id,'.$id.']',
         ];
 
         // Validating

@@ -64,8 +64,11 @@
                                         </div>
                                     </div>
                                     <div class="uk-from-controls" id="createCategory">
-                                        <div id='newCategory0'>
-                                            <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Kategori" required />
+                                        <div id='newCategory0' class="uk-margin-small" uk-grid>
+                                            <div class="uk-width-5-6">
+                                                <input class="uk-input" id="name[0]" name="name[0]" type="text" placeholder="Nama Kategori" required />
+                                            </div>
+                                            <div></div>
                                         </div>
                                     </div>
                                 </div>
