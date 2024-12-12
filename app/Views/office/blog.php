@@ -1,6 +1,12 @@
 <?= $this->extend('office/layout') ?>
 
-<?= $this->section('main') ?>
+<?= $this->section('extraSripts') ?>
+<script>
+    jQuery(window).on("load", function () {
+        $('#loading').attr('hidden', '');
+        $('#main').removeAttr('hidden');
+    });
+</script>
 
 <!-- Tiny MCE Js  -->
 <script src="https://cdn.tiny.cloud/1/fbtmdxwnanfjdicy4oh9uxzzp0idhv1sdbyxml3t9lgz0v6r/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
@@ -66,15 +72,9 @@
         border-radius: 50%;
     }
 </style>
+<?= $this->endSection() ?>
 
-<!-- Loading Js -->
-<script>
-    jQuery(window).on("load", function () {
-        $('#loading').attr('hidden', '');
-        $('#main').removeAttr('hidden');
-    });
-</script>
-
+<?= $this->section('main') ?>
 <section id="loading" class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-center uk-flex-middle">
     <div uk-spinner="ratio: 3"></div>
 </section>
@@ -114,6 +114,11 @@
             <div>
                 <a class="uk-button uk-button-secondary" href="office/blog/add" uk-toggle>Tambah Artikel</a>
             </div>
+        </div>
+        
+        <!-- Pagination Top -->
+        <div class="uk-flex uk-flex-right uk-margin">
+            <?= $pager->links('blogs', 'uikit_full') ?>
         </div>
 
         <!-- Blog Grid -->
@@ -164,11 +169,11 @@
                 </div>
             <?php } ?>
         </div>
-    </div>
 
-    <!-- Pagination -->
-    <div class="uk-container uk-container-xlarge uk-margin-top">
-        <?= $pager->links('blogs', 'uikit_full') ?>
+        <!-- Pagination Bottom -->
+        <div class="uk-flex uk-flex-right uk-margin">
+            <?= $pager->links('blogs', 'uikit_full') ?>
+        </div>
     </div>
 </section>
 <?= $this->endSection() ?>
