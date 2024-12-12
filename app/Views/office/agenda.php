@@ -1,15 +1,15 @@
 <?= $this->extend('office/layout') ?>
 
-<?= $this->section('main') ?>
-
-<!-- Loading Js -->
+<?= $this->section('extraSripts') ?>
 <script>
     jQuery(window).on("load", function () {
         $('#loading').attr('hidden', '');
         $('#main').removeAttr('hidden');
     });
 </script>
+<?= $this->endSection() ?>
 
+<?= $this->section('main') ?>
 <section id="loading" class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-center uk-flex-middle">
     <div uk-spinner="ratio: 3"></div>
 </section>
@@ -130,6 +130,11 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Pagination Top -->
+        <div class="uk-flex uk-flex-right uk-margin">
+            <?= $pager->links('agenda', 'uikit_full') ?>
+        </div>
 
         <!-- Category Grid -->
         <div class="uk-child-width-1-1 uk-child-width-1-4@m" uk-grid  uk-height-match="target: > div > .uk-card > .uk-card-header">
@@ -175,11 +180,11 @@
                 </div>
             <?php } ?>
         </div>
-    </div>
 
-    <!-- Pagination -->
-    <div class="uk-container uk-container-xlarge uk-margin-top">
-        <?= $pager->links('agenda', 'uikit_full') ?>
+        <!-- Pagination Bottom -->
+        <div class="uk-flex uk-flex-right uk-margin">
+            <?= $pager->links('agenda', 'uikit_full') ?>
+        </div>
     </div>
 </section>
 <?= $this->endSection() ?>

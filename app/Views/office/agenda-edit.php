@@ -1,15 +1,15 @@
 <?= $this->extend('office/layout') ?>
 
-<?= $this->section('main') ?>
-
-<!-- Loading Js -->
+<?= $this->section('extraSripts') ?>
 <script>
     jQuery(window).on("load", function () {
         $('#loading').attr('hidden', '');
         $('#main').removeAttr('hidden');
     });
 </script>
+<?= $this->endSection() ?>
 
+<?= $this->section('main') ?>
 <section id="loading" class="uk-width-1-1 uk-height-1-1 uk-flex uk-flex-center uk-flex-middle">
     <div uk-spinner="ratio: 3"></div>
 </section>
@@ -42,23 +42,33 @@
         </div>
 
         <!-- Edit Category -->
-        <form class="uk-margin uk-form-stacked" action="office/agenda/edit-category-<?=$category['id']?>" method="post">
-            <?= csrf_field() ?>
-            <div class="uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
-                <div class="uk-inline">
-                    <h1 class="uk-h3 uk-heading-bullet uk-margin-remove">Daftar Agenda Dari Kategori 
-                        <input class="uk-input" id="name-category-<?=$category['id']?>" name="name-category" type="text" placeholder="Nama Kategori" value="<?=$category['name']?>" />
-                    </h1>
+        <div class="uk-margin">
+            <form class="uk-margin uk-form-stacked" action="office/agenda/edit-category-<?=$category['id']?>" method="post">
+                <?= csrf_field() ?>
+                <div class="uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
+                    <div>
+                        <h1 class="uk-h3 uk-heading-bullet uk-margin-remove">Formulir Ubah Kategori
+                            <input class="uk-input" id="name-category-<?=$category['id']?>" name="name-category" type="text" placeholder="Nama Kategori" value="<?=$category['name']?>" />
+                        </h1>
+                    </div>
+                    <div>
+                        <button class="uk-button uk-button-secondary" type="submit">Simpan Kategori</button>
+                    </div>
                 </div>
-                <div>
-                    <button class="uk-button uk-button-secondary" type="submit">Simpan Kategori</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+
+        <!-- Divider -->
+        <hr style ="border-top: 3px double #8c8b8b">
 
         <!-- Add Agenda -->
-        <div class="uk-margin uk-container uk-container-xsmall uk-text-center">
-            <a class="uk-button uk-button-secondary uk-button-default" href="#add" uk-toggle>Tambah Agenda</a>
+        <div class="uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
+            <div>
+                <h1 class="uk-h3 uk-heading-bullet uk-margin-remove">Daftar Agenda</h1>
+            </div>
+            <div>
+                <a class="uk-button uk-button-secondary uk-button-default" href="#add" uk-toggle>Tambah Agenda</a>
+            </div>
         </div>
         <div id="add" class="uk-flex-top" uk-modal="bg-close:false;">
             <div class="uk-modal-dialog uk-margin-auto-vertical">
@@ -140,6 +150,11 @@
                 </form>
             </div>
         </div>
+        
+        <!-- Pagination Top -->
+        <div class="uk-flex uk-flex-right uk-margin">
+            <?= $pager->links('editagenda', 'uikit_full') ?>
+        </div>
 
         <!-- Agenda Table -->
         <div class="uk-overflow-auto">
@@ -213,6 +228,11 @@
             <div class="uk-container uk-container-xlarge uk-margin-top">
                 <?= $pager->links('editagenda', 'uikit_full') ?>
             </div>
+        </div>
+
+        <!-- Pagination Bottom -->
+        <div class="uk-flex uk-flex-right uk-margin">
+            <?= $pager->links('editagenda', 'uikit_full') ?>
         </div>
     </div>
 </section>
