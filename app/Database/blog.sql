@@ -24,24 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
---
-
-CREATE TABLE `blog` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `slug` varchar(255) NOT NULL,
-  `content` mediumtext NOT NULL,
-  `images` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `featured` int(8) NOT NULL,
-  `highlight` int(8) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Dumping data for table `blog`
 --
 
