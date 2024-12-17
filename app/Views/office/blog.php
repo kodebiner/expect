@@ -121,53 +121,112 @@
             <?= $pager->links('blogs', 'uikit_full') ?>
         </div>
 
-        <!-- Blog Grid -->
-        <div class="uk-child-width-1-1 uk-child-width-1-4@m" uk-grid  uk-height-match="target: > div > .uk-card > .uk-card-header">
-            <?php foreach ($blogs as $blog) { ?>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-hover">
-                        <div class="uk-card-header">
-                            <h3 class="uk-text-lead"><?=$blog['title']?></h3>
-                        </div>
-                        <div class="uk-card-body">
-                            <div class="uk-height-small uk-flex uk-flex-middle uk-flex-center">
-                                <img src="images/blog/<?=$blog['images']?>" style="max-height:100%; max-width:100%" />
-                            </div>
-                        </div>
-                        <div class="uk-card-footer">
-                            <div class="uk-child-width-auto uk-flex-center" uk-grid>
-                                <div>
-                                    <a href="office/blog/edit-<?=$blog['id']?>" uk-toggle class="uk-icon-button" uk-icon="pencil"></a>
-                                </div>
-                                <div>
-                                    <a href="#delete-<?=$blog['id']?>" uk-toggle class="uk-icon-button uk-button-danger" uk-icon="trash"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Blog Table -->
+        <div class="uk-overflow-auto">
+            <table class="uk-table uk-table-striped uk-table-hover">
+                <tbody>
+                    <tr>
+                        <th>Judul Artikel</th>
+                        <th>Featured</th>
+                        <th>Highlight</th>
+                        <th>Tanggal Dibuat</th>
+                        <th></th>
+                    </tr>
+                    <?php foreach ($blogs as $blog) {
+                        if ($blog['featured'] == '0') {
+                            $featured   = '';
+                        } else {
+                            $featured   = 'checked';
+                        }
+                        if ($blog['highlight'] == '0') {
+                            $highlight   = '';
+                        } else {
+                            $highlight   = 'checked';
+                        } ?>
 
-                    <!-- Delete Modal -->
-                    <div id="delete-<?=$blog['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
-                        <div class="uk-modal-dialog uk-margin-auto-vertical">
-                            <div class="uk-modal-body">
-                                <div class="uk-modal-title uk-text-center">Anda yakin akan menghapus<br/><b><?=$blog['title']?></b>?</div>
-                            </div>
-                            <div class="uk-modal-footer">
-                                <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
+                        <tr>
+                            <td class="uk-table-expand"><?=$blog['title']?></td>
+                            <td class="uk-width-small">
+                                <input class="uk-checkbox" type="checkbox" disabled <?= $featured ?>>
+                            </td>
+                            <td class="uk-width-small">
+                                <input class="uk-checkbox" type="checkbox" disabled <?= $highlight ?>>
+                            </td>
+                            <td id="created_at-<?= $blog['id'] ?>"></td>
+                            <td class="uk-width-small">
+                                <div class="uk-child-width-auto uk-flex-center" uk-grid>
                                     <div>
-                                        <form class="uk-margin uk-form-stacked" action="office/blog/delete" method="post">
-                                            <?= csrf_field() ?>
-                                            <input id="blog-id" name="blog-id" value="<?=$blog['id']?>" hidden required />
-                                            <button class="uk-button uk-button-secondary" type="submit">Ya</button>
-                                        </form>
+                                        <a href="office/blog/edit-<?=$blog['id']?>" uk-toggle class="uk-icon-button" uk-icon="pencil"></a>
                                     </div>
-                                    <div><a class="uk-button uk-button-danger uk-modal-close">Tidak</a></div>
+                                    <div>
+                                        <a href="#delete-<?=$blog['id']?>" uk-toggle class="uk-icon-button uk-button-danger" uk-icon="trash"></a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Delete Modal -->
+                        <div id="delete-<?=$blog['id']?>" class="uk-flex-top" uk-modal="bg-close:false;">
+                            <div class="uk-modal-dialog uk-margin-auto-vertical">
+                                <div class="uk-modal-body">
+                                    <div class="uk-modal-title uk-text-center">Anda yakin akan menghapus<br/><b><?=$blog['title']?></b>?</div>
+                                </div>
+                                <div class="uk-modal-footer">
+                                    <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
+                                        <div>
+                                            <form class="uk-margin uk-form-stacked" action="office/blog/delete" method="post">
+                                                <?= csrf_field() ?>
+                                                <input id="blog-id" name="blog-id" value="<?=$blog['id']?>" hidden required />
+                                                <button class="uk-button uk-button-secondary" type="submit">Ya</button>
+                                            </form>
+                                        </div>
+                                        <div><a class="uk-button uk-button-danger uk-modal-close">Tidak</a></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            <?php } ?>
+
+                        <!-- Script Date In Indonesia -->
+                        <script>
+                            var publishupdate   = "<?= $blog['created_at'] ?>";
+                            var thatdate        = publishupdate.split( /[- :]/ );
+                            thatdate[1]--;
+                            var publishthatdate = new Date( ...thatdate );
+                            var publishyear     = publishthatdate.getFullYear();
+                            var publishmonth    = publishthatdate.getMonth();
+                            var publishdate     = publishthatdate.getDate();
+                            var publishday      = publishthatdate.getDay();
+
+                            switch(publishday) {
+                                case 0: publishday     = "Minggu"; break;
+                                case 1: publishday     = "Senin"; break;
+                                case 2: publishday     = "Selasa"; break;
+                                case 3: publishday     = "Rabu"; break;
+                                case 4: publishday     = "Kamis"; break;
+                                case 5: publishday     = "Jum'at"; break;
+                                case 6: publishday     = "Sabtu"; break;
+                            }
+                            switch(publishmonth) {
+                                case 0: publishmonth   = "Januari"; break;
+                                case 1: publishmonth   = "Februari"; break;
+                                case 2: publishmonth   = "Maret"; break;
+                                case 3: publishmonth   = "April"; break;
+                                case 4: publishmonth   = "Mei"; break;
+                                case 5: publishmonth   = "Juni"; break;
+                                case 6: publishmonth   = "Juli"; break;
+                                case 7: publishmonth   = "Agustus"; break;
+                                case 8: publishmonth   = "September"; break;
+                                case 9: publishmonth   = "Oktober"; break;
+                                case 10: publishmonth  = "November"; break;
+                                case 11: publishmonth  = "Desember"; break;
+                            }
+
+                            var publishfulldate         = publishday + ", " + publishdate + " " + publishmonth + " " + publishyear;
+                            document.getElementById("created_at-<?= $blog['id'] ?>").innerHTML = publishfulldate;
+                        </script>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
 
         <!-- Pagination Bottom -->

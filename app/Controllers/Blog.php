@@ -42,7 +42,7 @@ class Blog extends BaseController
 
         // Populating Data
         $user       = auth()->user();
-        $blogs      = $BlogModel->orderBy('id', 'DESC')->paginate(20, 'blogs');
+        $blogs      = $BlogModel->orderBy('created_at', 'DESC')->paginate(20, 'blogs');
 
         // Parsing Data to View
         $data                   = $this->data;
