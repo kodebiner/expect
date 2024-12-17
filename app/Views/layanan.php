@@ -94,7 +94,8 @@
                         <div>
                             <div class="uk-card-body">
                                 <h3 class="uk-card-title">Serifikasi BNSP</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat pharetra elit consequat egestas. Nulla facilisi. Vivamus suscipit, libero sit amet sollicitudin auctor, tortor turpis semper arcu, ut pulvinar turpis magna eget lectus. Ut tincidunt malesuada nisl, ultrices viverra felis blandit vitae.</p>
+                                <p>Program ini dapat dilaksanakan secara In House atau Public. Sertifikasi profesi sangat penting karena memberikan bukti formal bahwa seseorang memiliki kompetensi dalam bidang tertentu. Dan sangat berguna bagi perusahaan dan organisasi yang mencari tenaga kerja yang kompeten, karena sertifikasi ini menjamin bahwa seseorang yang diakui memiliki kompetensi yang dibutuhkan.</p>
+                                <p>Kami memberikan Refreshment (Pelatihan) sebelum para peserta melaksanakan Uji Kompetensi.</p>
                             </div>
                         </div>
                     </div>
