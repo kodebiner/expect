@@ -32,78 +32,20 @@
         <div data-src="/images/bottom-bg.svg" uk-img class="uk-background-norepeat uk-background-contain uk-background-bottom-left uk-section" uk-parallax="bgx: -120,-120; bgy: 420,120; easing: 0.5">
             <div class="uk-container uk-container-xlarge">
                 <div class="uk-child-width-1-2 uk-child-width-1-4@m" uk-grid="masonry: pack" uk-lightbox>
-                    <div>
-                        <a href="images/gallery/dummy-1.jpg" data-caption="Caption 1">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-1.jpg" />
+                    <?php foreach ($galleries as $gallery) { ?>
+                        <div>
+                            <a href="images/gallery/<?=$gallery['image']?>">
+                                <div class="uk-card uk-card-default uk-card-hover">
+                                    <div class="uk-card-media-top">
+                                        <img class="uk-width-1-1" src="images/gallery/<?=$gallery['image']?>" />
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="images/gallery/dummy-2.jpg" data-caption="Caption 2">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-2.jpg" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="images/gallery/dummy-3.jpg" data-caption="Caption 3">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-3.jpg" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="images/gallery/dummy-4.jpg" data-caption="Caption 4">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-4.jpg" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="images/gallery/dummy-5.jpg" data-caption="Caption 5">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-5.jpg" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="images/gallery/dummy-6.jpg" data-caption="Caption 6">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-6.jpg" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="images/gallery/dummy-7.jpg" data-caption="Caption 71">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-7.jpg" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="images/gallery/dummy-8.jpg" data-caption="Caption 8">
-                            <div class="uk-card uk-card-default uk-card-hover">
-                                <div class="uk-card-media-top">
-                                    <img class="uk-width-1-1" src="images/gallery/dummy-8.jpg" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="uk-flex uk-flex-center uk-margin-large-top">
+                    <?= $pager->links('galleries', 'uikit_full') ?>
                 </div>
             </div>
         </div>

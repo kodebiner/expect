@@ -54,7 +54,7 @@ $routes->group('office', ['filter' => ['chain','group:superadmin,admin']], stati
 $routes->get('/', 'Home::index');
 $routes->get('profil', 'Home::profile');
 $routes->get('layanan', 'Home::layanan');
-$routes->get('galeri', 'Home::galeri');
+$routes->get('galeri', 'Gallery::page');
 
 $routes->group('blog', static function ($routes) {
     $routes->get('/', 'Blog::index');

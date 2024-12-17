@@ -83,4 +83,23 @@ class Gallery extends BaseController
             return redirect()->back()->with('error', 'Data tidak ditemukan');
         }
     }
+
+    public function page()
+    {
+        // Calling Models
+        $GalleryModel = new GalleryModel();
+
+        // Populating Data
+        $galleries = $GalleryModel->orderBy('id', 'DESC')->paginate(10, 'galleries');
+
+        // Parsing Data to View
+        $data                   = $this->data;
+        $data['title']          = 'Galeri Expect';
+        $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+        $data['galleries']      = $galleries;
+        $data['pager']          = $GalleryModel->pager;
+
+        // Rendering View
+        return view('galeri', $data);
+    }
 }
