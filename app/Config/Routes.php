@@ -58,5 +58,6 @@ $routes->get('galeri', 'Gallery::page');
 
 $routes->group('blog', static function ($routes) {
     $routes->get('/', 'Blog::index');
+    $routes->get('(:any)', 'Blog::detail/$1');
     $routes->get('dummyarticle', 'Blog::dummyarticle');
 });

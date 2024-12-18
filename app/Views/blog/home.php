@@ -30,145 +30,44 @@
                     <div class="uk-width-1-1@m">
                         <div class="uk-margin-xlarge">
                             <div class="uk-child-width-1-1 uk-child-width-1-2@s" uk-grid>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-panel uk-margin-remove-first-child" uk-scrollspy-class>
-                                            <div class="uk-height-large uk-background-cover"  data-src="images/outbound.jpg" uk-img></div>
-                                            <h3 class="el-title uk-h3 uk-link-reset uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-panel uk-margin-remove-first-child" uk-scrollspy-class>
-                                            <div class="uk-height-large uk-background-cover"  data-src="images/pelatihan-pra-purnabakti.png" uk-img></div>
-                                            <h3 class="el-title uk-h3 uk-link-reset uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
+                                <?php foreach ($highlights as $highlight) { ?>
+                                    <div>
+                                        <a href="blog/<?=$highlight['slug']?>">
+                                            <article class="el-item uk-panel uk-margin-remove-first-child" uk-scrollspy-class>
+                                                <div class="uk-height-large uk-background-cover"  data-src="images/blog/<?=$highlight['images']?>" uk-img></div>
+                                                <h3 class="el-title uk-h3 uk-link-reset uk-margin-top uk-margin-remove-bottom"><?=$highlight['title']?></h3>
+                                                <div class="uk-margin-small-top">
+                                                    <div class="el-link uk-button uk-button-text">Selengkapnya</div>
+                                                </div>
+                                            </article>
+                                        </a>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="uk-margin">
                             <div class="uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-grid-row-large uk-grid-match" uk-grid>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/outbound.jpg" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/pelatihan-pra-purnabakti.png" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/pelatihan-inhouse.jpg" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/pelatihan-public.png" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/gallery/dummy-2.jpg" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/gallery/dummy-1.jpg" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/gallery/dummy-5.jpg" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="blog/dummyarticle">
-                                        <article class="el-item uk-grid-item-match" uk-scrollspy-class>
-                                            <picture class="uk-cover-container">
-                                                <canvas width="370" height="208"></canvas>
-                                                <img src="images/gallery/dummy-3.jpg" uk-cover />
-                                            </picture>
-                                            <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom">Lorem Ipsum Dolor Sit Amet</h3>
-                                            <div class="uk-margin-small-top">
-                                                <div class="el-link uk-button uk-button-text">Selengkapnya</div>
-                                            </div>
-                                        </article>
-                                    </a>
-                                </div>
+                                <?php foreach ($blogs as $blog) { ?>
+                                    <div>
+                                        <a href="blog/<?=$blog['slug']?>">
+                                            <article class="el-item uk-grid-item-match" uk-scrollspy-class>
+                                                <picture class="uk-cover-container">
+                                                    <canvas width="370" height="208"></canvas>
+                                                    <img src="images/blog/<?=$blog['images']?>" uk-cover />
+                                                </picture>
+                                                <h3 class="el-title uk-h4 uk-margin-top uk-margin-remove-bottom"><?=$blog['title']?></h3>
+                                                <div class="uk-margin-small-top">
+                                                    <div class="el-link uk-button uk-button-text">Selengkapnya</div>
+                                                </div>
+                                            </article>
+                                        </a>
+                                    </div>
+                                <?php } ?>
                             </div>
+                        </div>                        
+                        <!-- Pagination Top -->
+                        <div class="uk-flex uk-flex-center uk-margin-large">
+                            <?= $pager->links('blogs', 'uikit_full') ?>
                         </div>
                     </div>
                 </div>

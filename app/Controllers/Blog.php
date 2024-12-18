@@ -8,16 +8,40 @@ class Blog extends BaseController
     public function index()
     {
         // Calling Models
+        $BlogModel = new BlogModel();
 
         // Populating Data
+        $highlights = $BlogModel->where('highlight', 1)->orderBy('created_at', 'DESC')->limit(2)->find();
+        $blogs = $BlogModel->orderBy('created_at', 'DESC')->paginate(8, 'blogs');
 
         // Parsing Data to View
         $data                   = $this->data;
         $data['title']          = 'Update & Inspirasi Expect';
         $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+        $data['highlights']     = $highlights;
+        $data['blogs']          = $blogs;        
+        $data['pager']          = $BlogModel->pager;
 
         // Rendering View
         return view('blog/home', $data);
+    }
+
+    public function detail($slug)
+    {
+        // Calling Models
+        $BlogModel = new BlogModel();
+
+        // Populating Data
+        $blog = $BlogModel->where('slug', $slug)->orderBy('created_at', 'DESC')->first();
+
+        // Parsing Data to View
+        $data                   = $this->data;
+        $data['title']          = 'LoremIpsum Dolor Sit Amet';
+        $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+        $data['blog']           = $blog;
+
+        // Rendering View
+        return view('blog/detail', $data);
     }
 
     public function dummyarticle()

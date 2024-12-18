@@ -96,54 +96,20 @@
                         <div class="uk-position-relative">
                             <div class="uk-slider-container">
                                 <div class="uk-slider-items uk-visible-toggle uk-child-width-1-2@m uk-grid" uk-height-match="target: > div > a > .uk-card > .uk-card-body">
-                                    <div>
-                                        <a>
-                                            <div class="uk-card uk-card-default uk-card-hover">
-                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/outbound-news.jpg');">
-                                                    <img class="uk-hidden" src="images/blog/outbound-news.jpg" alt="Lorem Ipsum" />
+                                    <?php foreach ($blogs as $blog) { ?>
+                                        <div>
+                                            <a href="blog/<?=$blog['slug']?>">
+                                                <div class="uk-card uk-card-default uk-card-hover">
+                                                    <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/<?=$blog['images']?>');">
+                                                        <img class="uk-hidden" src="images/blog/<?=$blog['images']?>" alt="<?=$blog['title']?>" />
+                                                    </div>
+                                                    <div class="uk-card-body">
+                                                        <h3 class="el-card-title"><?=$blog['title']?></h3>
+                                                    </div>
                                                 </div>
-                                                <div class="uk-card-body">
-                                                    <h3 class="el-card-title">Lorem Ipsum</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a>
-                                            <div class="uk-card uk-card-default uk-card-hover">
-                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/online-meeting.jpg');">
-                                                    <img class="uk-hidden" src="images/blog/online-meeting.jpg" alt="Dolor Sit Amet Lorem" />
-                                                </div>
-                                                <div class="uk-card-body">
-                                                    <h3 class="el-card-title">Lorem Ipsum</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a>
-                                            <div class="uk-card uk-card-default uk-card-hover">
-                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/seminar.jpg');">
-                                                    <img class="uk-hidden" src="images/blog/seminar.jpg" alt="Lorem Ipsum Dolor sit Amet" />
-                                                </div>
-                                                <div class="uk-card-body">
-                                                    <h3 class="el-card-title">Lorem Ipsum Dolor sit Amet</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a>
-                                            <div class="uk-card uk-card-default uk-card-hover">
-                                                <div class="uk-card-media-top uk-height-medium uk-background-cover" style="background-image:url('images/blog/group-meeting.jpg');">
-                                                    <img class="uk-hidden" src="images/blog/group-meeting.jpg" alt="Nulla vel enim sed nunc efficitur rutrum in ut dui" />
-                                                </div>
-                                                <div class="uk-card-body">
-                                                    <h3 class="el-card-title">Nulla vel enim sed nunc efficitur rutrum in ut dui</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                            </a>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>

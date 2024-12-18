@@ -5,19 +5,23 @@ namespace App\Controllers;
 use App\Models\ClientModel;
 use App\Models\AgendaCategoryModel;
 use App\Models\AgendaModel;
+use App\Models\BlogModel;
 
 class Home extends BaseController
 {
     public function index()
     {
         // Calling Models
+        $BlogModel = new BlogModel();
 
         // Populating Data
+        $blogs = $BlogModel->orderBy('created_at', 'DESC')->limit(4)->find();
 
         // Parsing Data to View
         $data                   = $this->data;
         $data['title']          = 'expect - Training Consultant';
         $data['description']    = 'Bawa ide aplikasi Anda menjadi kenyataan dengan Kodebiner! Kami membengun aplikasi sesuai dengan kebutuhan bisnis Anda.';
+        $data['blogs']          = $blogs;
 
         // Rendering View
         return view('home', $data);
