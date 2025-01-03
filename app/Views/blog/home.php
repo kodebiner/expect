@@ -15,7 +15,7 @@
                             Update & Inspirasi
                         </h1>
                         <div class="uk-panel uk-text-lead uk-position-relative uk-margin-large uk-margin-remove-top uk-width-2xlarge" uk-scrollspy-class>
-                            Lorem ipsum dolor sit amet, consectur adipiscing elit, usmod tempor incididunt ut labore et dolore magna aliqua enim minim veniam.
+                            Blog Expect menyajikan informasi terkini mengenai kegiatan perusahaan, termasuk update proyek, berita industri, dan laporan kegiatan.
                         </div>
                     </div>
                     <div class="uk-grid-item-match uk-width-1-4@s">
