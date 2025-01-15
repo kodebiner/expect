@@ -34,7 +34,7 @@
                                     <a href="layanan#inhouse">
                                         <div class="uk-card uk-card-default uk-card-hover">
                                             <div class="uk-card-media-top">
-                                                <img src="images/gallery/INHOUSE TRAINING 1.JPG" alt="Pelatihan Inhouse" style="width: 370px; height: 208px; object-fit: cover;" />
+                                                <img src="images/LayananIH.JPG" alt="Pelatihan Inhouse" style="width: 370px; height: 208px; object-fit: cover;" />
                                             </div>
                                             <div class="uk-card-body uk-margin-remove-first-child">
                                                 <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Inhouse</h3>
@@ -47,7 +47,7 @@
                                     <a href="layanan#public">
                                         <div class="uk-card uk-card-default uk-card-hover">
                                             <div class="uk-card-media-top">
-                                                <img src="images/gallery/PUBLIC 3.jpg" alt="Pelatiha Public" style="width: 370px; height: 208px; object-fit: cover;" />
+                                                <img src="images/LayananPub.jpg" alt="Pelatiha Public" style="width: 370px; height: 208px; object-fit: cover;" />
                                             </div>
                                             <div class="uk-card-body uk-margin-remove-first-child">
                                                 <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Public</h3>
@@ -60,7 +60,7 @@
                                     <a href="layanan#outbound">
                                         <div class="uk-card uk-card-default uk-card-hover">
                                             <div class="uk-card-media-top">
-                                                <img src="images/gallery/WhatsApp Image 2025-01-15 at 11.26.46 AM.jpeg" style="width: 370px; height: 208px; object-fit: cover;" alt="Gathering & Outbound" />
+                                                <img src="images/LayananTB.jpeg" style="width: 370px; height: 208px; object-fit: cover;" alt="Gathering & Outbound" />
                                             </div>
                                             <div class="uk-card-body uk-margin-remove-first-child">
                                                 <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Gathering & OutBound</h3>
@@ -72,7 +72,7 @@
                                     <a href="layanan#purnabakti">
                                         <div class="uk-card uk-card-default uk-card-hover">
                                             <div class="uk-card-media-top">
-                                                <img src="images/gallery/PURNABAKTI 2.JPG" alt="Pelatihan Pra Purnabakti" style="width: 370px; height: 208px; object-fit: cover;" />
+                                                <img src="images/LayananPurna.JPG" alt="Pelatihan Pra Purnabakti" style="width: 370px; height: 208px; object-fit: cover;" />
                                             </div>
                                             <div class="uk-card-body uk-margin-remove-first-child">
                                                 <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Pra Purnabakti Bisnis & Kewirausahaan</h3>
@@ -84,7 +84,7 @@
                                     <a href="layanan#bnsp">
                                         <div class="uk-card uk-card-default uk-card-hover">
                                             <div class="uk-card-media-top">
-                                                <img src="images/gallery/WhatsApp Image 2025-01-15 at 11.24.27 AM.jpeg" style="width: 370px; height: 208px; object-fit: cover;" alt="Serifikasi BNSP" />
+                                                <img src="images/LayananBNSP.jpeg" style="width: 370px; height: 208px; object-fit: cover;" alt="Serifikasi BNSP" />
                                             </div>
                                             <div class="uk-card-body uk-margin-remove-first-child">
                                                 <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Serifikasi BNSP</h3>

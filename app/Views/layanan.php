@@ -38,7 +38,7 @@
                 <div class="uk-padding">
                     <div id="inhouse" class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-card-media-left uk-cover-container">
-                            <img src="images/gallery/INHOUSE TRAINING 1.JPG" alt="Pelatihan Inhouse" uk-cover>
+                            <img src="images/LayananIH.JPG" alt="Pelatihan Inhouse" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
                         </div>
                         <div>
@@ -51,7 +51,7 @@
                     </div>
                     <div id="public" class="uk-margin-large uk-card uk-card-secondary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
-                            <img src="images/gallery/PUBLIC 3.jpg" alt="Pelatihan Public" uk-cover>
+                            <img src="images/LayananPub.jpg" alt="Pelatihan Public" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
                         </div>
                         <div>
@@ -64,7 +64,7 @@
                     </div>
                     <div id="outbound" class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-card-media-left uk-cover-container">
-                            <img src="images/gallery/WhatsApp Image 2025-01-15 at 11.26.46 AM.jpeg" alt="Gathering & Outbound" uk-cover>
+                            <img src="images/LayananTB.jpeg" alt="Gathering & Outbound" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
                         </div>
                         <div>
@@ -76,7 +76,7 @@
                     </div>
                     <div id="purnabakti" class="uk-margin-large uk-card uk-card-secondary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
-                            <img src="images/gallery/PURNABAKTI 2.JPG" alt="Pelatihan Pra Purnabakti Bisnis & Kewirausahaan" uk-cover>
+                            <img src="images/LayananPurna.JPG" alt="Pelatihan Pra Purnabakti Bisnis & Kewirausahaan" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
                         </div>
                         <div>
@@ -88,7 +88,7 @@
                     </div>
                     <div id="bnsp" class="uk-margin-large uk-card uk-card-primary uk-child-width-1-2@s" uk-grid uk-scroll>
                         <div class="uk-card-media-left uk-cover-container">
-                            <img src="images/gallery/WhatsApp Image 2025-01-15 at 11.24.27 AM.jpeg" alt="Sertifikasi BNSP" uk-cover>
+                            <img src="images/LayananBNSP.jpeg" alt="Sertifikasi BNSP" uk-cover>
                             <canvas class="uk-width-1-1 uk-height-1-1"></canvas>
                         </div>
                         <div>
