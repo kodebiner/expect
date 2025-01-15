@@ -27,59 +27,75 @@
             <div class="uk-grid tm-grid-expand uk-child-width-1-1 uk-grid-margin">
                 <div class="uk-width-1-1@m">
                     <h2 class="uk-h3 uk-heading-bullet uk-margin-medium uk-scrollspy-inview" uk-scrollspy-class>Program Pelatihan</h2>
-                    <div class="uk-margin">
-                        <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid uk-height-match="target: > div > a > .uk-card > .uk-card-body">
-                            <div>
-                                <a href="layanan#inhouse">
-                                    <div class="uk-card uk-card-default uk-card-hover">
-                                        <div class="uk-card-media-top">
-                                            <img src="images/pelatihan-inhouse.jpg" alt="Pelatiha Inhouse" />
+                    <div class="uk-position-relative uk-visible-toggle uk-margin" uk-slider="autoplay: true">
+                        <div class="uk-slider-container">
+                            <div class="uk-slider-items uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid uk-height-match="target: > div > a > .uk-card > .uk-card-body">
+                                <div>
+                                    <a href="layanan#inhouse">
+                                        <div class="uk-card uk-card-default uk-card-hover">
+                                            <div class="uk-card-media-top">
+                                                <img src="images/gallery/INHOUSE TRAINING 1.JPG" alt="Pelatihan Inhouse" style="width: 370px; height: 208px; object-fit: cover;" />
+                                            </div>
+                                            <div class="uk-card-body uk-margin-remove-first-child">
+                                                <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Inhouse</h3>
+                                                <div class="el-meta uk-text-meta uk-margin-small-top">Online / Offline</div>
+                                            </div>
                                         </div>
-                                        <div class="uk-card-body uk-margin-remove-first-child">
-                                            <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Inhouse</h3>
-                                            <div class="el-meta uk-text-meta uk-margin-small-top">Online / Offline</div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="layanan#public">
+                                        <div class="uk-card uk-card-default uk-card-hover">
+                                            <div class="uk-card-media-top">
+                                                <img src="images/gallery/PUBLIC 3.jpg" alt="Pelatiha Public" style="width: 370px; height: 208px; object-fit: cover;" />
+                                            </div>
+                                            <div class="uk-card-body uk-margin-remove-first-child">
+                                                <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Public</h3>
+                                                <div class="el-meta uk-text-meta uk-margin-small-top">Online / Offline</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="layanan#public">
-                                    <div class="uk-card uk-card-default uk-card-hover">
-                                        <div class="uk-card-media-top">
-                                            <img src="images/pelatihan-public.png" alt="Pelatiha Public" />
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="layanan#outbound">
+                                        <div class="uk-card uk-card-default uk-card-hover">
+                                            <div class="uk-card-media-top">
+                                                <img src="images/gallery/WhatsApp Image 2025-01-15 at 11.26.46 AM.jpeg" style="width: 370px; height: 208px; object-fit: cover;" alt="Gathering & Outbound" />
+                                            </div>
+                                            <div class="uk-card-body uk-margin-remove-first-child">
+                                                <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Gathering & OutBound</h3>
+                                            </div>
                                         </div>
-                                        <div class="uk-card-body uk-margin-remove-first-child">
-                                            <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Public</h3>
-                                            <div class="el-meta uk-text-meta uk-margin-small-top">Online / Offline</div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="layanan#purnabakti">
+                                        <div class="uk-card uk-card-default uk-card-hover">
+                                            <div class="uk-card-media-top">
+                                                <img src="images/gallery/PURNABAKTI 2.JPG" alt="Pelatihan Pra Purnabakti" style="width: 370px; height: 208px; object-fit: cover;" />
+                                            </div>
+                                            <div class="uk-card-body uk-margin-remove-first-child">
+                                                <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Pra Purnabakti Bisnis & Kewirausahaan</h3>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="layanan#outbound">
-                                    <div class="uk-card uk-card-default uk-card-hover">
-                                        <div class="uk-card-media-top">
-                                            <img src="images/outbound.jpg" alt="Gathering & Outbound" />
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="layanan#bnsp">
+                                        <div class="uk-card uk-card-default uk-card-hover">
+                                            <div class="uk-card-media-top">
+                                                <img src="images/gallery/WhatsApp Image 2025-01-15 at 11.24.27 AM.jpeg" style="width: 370px; height: 208px; object-fit: cover;" alt="Serifikasi BNSP" />
+                                            </div>
+                                            <div class="uk-card-body uk-margin-remove-first-child">
+                                                <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Serifikasi BNSP</h3>
+                                            </div>
                                         </div>
-                                        <div class="uk-card-body uk-margin-remove-first-child">
-                                            <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Gathering & OutBound</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="layanan#purnabakti">
-                                    <div class="uk-card uk-card-default uk-card-hover">
-                                        <div class="uk-card-media-top">
-                                            <img src="images/pelatihan-pra-purnabakti.png" alt="Pelatihan Pra Purnabakti" />
-                                        </div>
-                                        <div class="uk-card-body uk-margin-remove-first-child">
-                                            <h3 class="el-title uk-h5 uk-margin-top uk-margin-remove-bottom">Pelatihan Pra Purnabakti Bisnis & Kewirausahaan</h3>
-                                        </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <a class="uk-position-center-left-out uk-position-small" href uk-slidenav-previous uk-slider-item="previous"></a>
+                        <a class="uk-position-center-right-out uk-position-small" href uk-slidenav-next uk-slider-item="next"></a>
                     </div>
                 </div>
             </div>
@@ -122,9 +138,16 @@
     <section class="uk-section-muted" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-small; delay: false;">
         <div data-src="/images/bottom-bg.svg" uk-img class="uk-background-norepeat uk-background-contain uk-background-bottom-left uk-section uk-section-xlarge" uk-parallax="bgx: -120,-120; bgy: 420,120; easing: 0.5">
             <div class="uk-container">
-                <div class="uk-card uk-card-primary uk-width-1-1">
-                    <div class="uk-card-media-top">
-                        <img class="uk-width-1-1" src="images/team.jpg" alt="Team Expect" />
+                <div class="uk-grid-match" uk-grid>
+                    <div class="uk-width-1-3@m uk-width-1-1">
+                        <!-- <div class="uk-card-media-top"> -->
+                            <img class="uk-width-1-1" src="images/Picture2.png" alt="Team Expect" style="border-radius: 100px 0px 0px 0px;" />
+                        <!-- </div> -->
+                    </div>
+                    <div class="uk-width-2-3@m uk-width-1-1">
+                        <!-- <div class="uk-card-media-top"> -->
+                            <img class="uk-width-1-1" src="images/Picture1.png" alt="Team Expect" style="border-radius: 0px 100px 0px 0px;" />
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
