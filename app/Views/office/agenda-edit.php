@@ -209,7 +209,7 @@
                                 <div class="uk-modal-footer">
                                     <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
                                         <div>
-                                            <form class="uk-margin uk-form-stacked" action="office/agenda/delete-agenda" method="post">
+                                            <form class="uk-form-stacked" action="office/agenda/delete-agenda" method="post">
                                                 <?= csrf_field() ?>
                                                 <input id="agenda-id" name="agenda-id" value="<?=$agenda['id']?>" hidden required />
                                                 <button class="uk-button uk-button-secondary" type="submit">Ya</button>
