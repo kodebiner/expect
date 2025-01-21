@@ -193,7 +193,7 @@
                 </div>
                 <div class="uk-width-1-4">
                     <div class="uk-child-width-1-2 uk-margin-large" uk-grid>
-                        <div>
+                        <div hidden>
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="featured">Featured</label>
                                 <label class="switch uk-margin-small-left">

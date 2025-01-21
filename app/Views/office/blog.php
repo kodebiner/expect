@@ -127,17 +127,17 @@
                 <tbody>
                     <tr>
                         <th>Judul Artikel</th>
-                        <th>Featured</th>
+                        <!-- <th>Featured</th> -->
                         <th>Highlight</th>
                         <th>Tanggal Dibuat</th>
                         <th></th>
                     </tr>
                     <?php foreach ($blogs as $blog) {
-                        if ($blog['featured'] == '0') {
-                            $featured   = '';
-                        } else {
-                            $featured   = 'checked';
-                        }
+                        // if ($blog['featured'] == '0') {
+                        //     $featured   = '';
+                        // } else {
+                        //     $featured   = 'checked';
+                        // }
                         if ($blog['highlight'] == '0') {
                             $highlight   = '';
                         } else {
@@ -146,9 +146,9 @@
 
                         <tr>
                             <td class="uk-table-expand"><?=$blog['title']?></td>
-                            <td class="uk-width-small">
-                                <input class="uk-checkbox" type="checkbox" disabled <?= $featured ?>>
-                            </td>
+                            <!-- <td class="uk-width-small">
+                                <input class="uk-checkbox" type="checkbox" disabled </?= $featured ?>>
+                            </td> -->
                             <td class="uk-width-small">
                                 <input class="uk-checkbox" type="checkbox" disabled <?= $highlight ?>>
                             </td>
@@ -174,7 +174,7 @@
                                 <div class="uk-modal-footer">
                                     <div class="uk-child-width-auto uk-grid-small uk-flex-center" uk-grid>
                                         <div>
-                                            <form class="uk-margin uk-form-stacked" action="office/blog/delete" method="post">
+                                            <form class="uk-form-stacked" action="office/blog/delete" method="post">
                                                 <?= csrf_field() ?>
                                                 <input id="blog-id" name="blog-id" value="<?=$blog['id']?>" hidden required />
                                                 <button class="uk-button uk-button-secondary" type="submit">Ya</button>
